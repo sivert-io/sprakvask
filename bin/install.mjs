@@ -47,17 +47,28 @@ if (flags.has("--list")) {
 }
 
 /*
-  De ti sjekkene, klippet ut av selve ferdigheten.
+  Sjekkene, klippet ut av selve ferdigheten.
 
   Agentene som leser én fil får ikke referansemappen, så de får kjernen – men
   den hentes herfra i stedet for å skrives av. To kopier av de samme reglene er
   to steder å rette den samme feilen, og den ene ville blitt glemt.
+
+  Lenkene til referansefilene peker derfor til GitHub, der filene finnes.
 */
+const REFERENCES_URL = "https://github.com/sivert-io/sprakvask/blob/main/skills/sprakvask/references/";
+
 async function rulesText() {
   const skill = await readFile(path.join(skillDir, "SKILL.md"), "utf8");
-  const from = skill.indexOf("## De ti sjekkene");
+  const from = skill.indexOf("## Sjekkene");
   const to = skill.indexOf("## Etter sjekkene");
-  const core = from >= 0 && to > from ? skill.slice(from, to).trim() : skill;
+  if (from < 0 || to < from) {
+    throw new Error("Fant ikke «## Sjekkene» og «## Etter sjekkene» i SKILL.md.");
+  }
+  const core = skill
+    .slice(from, to)
+    .trim()
+    .replace(/\n-{3,}$/, "")
+    .replace(/\]\(references\//g, `](${REFERENCES_URL}`);
 
   return [
     "# Språkvask – norsk språkvask etter Språkrådets normer",

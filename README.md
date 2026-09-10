@@ -71,8 +71,8 @@ Start agenten på nytt etterpå.
 
 Det finnes ingen felles standard for dette. Innholdet er den samme prosaen
 uansett – bare stien og frontmatteren skiller. Claude Code får hele ferdigheten
-med referansefiler; de andre leser én fil, så de får de ti sjekkene og en lenke
-til resten.
+med referansefiler; de andre leser én fil, så de får sjekkene, med lenker til
+resten.
 
 Filene flere deler på – `AGENTS.md`, `copilot-instructions.md`, `.rules`,
 `CONVENTIONS.md` – tilhører deg. Der skrives det inn et avmerket avsnitt som
@@ -90,17 +90,22 @@ Den slår inn når teksten er norsk – i grensesnitt, e-poster, dokumentasjon,
 commit-meldinger, vilkår. Den rører ikke kode: `wantsFutureInvitations` blir
 ikke `ønskerFramtidigeInvitasjoner`.
 
-Ti sjekker ligger i selve ferdigheten og dekker det meste. Detaljene ligger i
-`references/` og lastes bare ved tvil:
+Tolv sjekker ligger i selve ferdigheten og dekker det meste. Detaljene ligger
+i `references/` og lastes bare ved tvil:
 
 | Fil | Innhold |
 | --- | --- |
-| `tegnsetting.md` | Komma, tankestrek, anførselstegn, apostrof |
-| `ordvalg.md` | Særskriving, og/å, de/dem, sin/hans |
-| `tall-datoer.md` | Tall, datoer, klokkeslett, valuta, forkortelser |
-| `klarspraak.md` | Aktiv form, substantivsjuke, feilmeldinger, knapper |
-| `engelsk-smitte.md` | Det som avslører oversatt norsk |
-| `nynorsk.md` | Der nynorsk skiller seg fra bokmål |
+| `tegnsetting.md` | Komma, punktum, kolon, tankestrek, anførselstegn, apostrof, punktlister |
+| `stor-liten-forbokstav.md` | Overskrifter, titler, institusjoner, du/De, merkenavn |
+| `tall-datoer.md` | Tall, beløp, prosent, datoer, klokkeslett, frister, telefonnumre |
+| `forkortelser.md` | Punktum eller ikke, vanlige feil, de vanligste forkortelsene |
+| `ordvalg.md` | Særskriving, og/å, da/når, de/dem, forvekslinger, faste uttrykk, preposisjoner |
+| `grammatikk.md` | Bøyning, samsvar, partisipp, verb, pronomen, konsekvens |
+| `e-post-og-brev.md` | Hilsener, signatur, emnefelt, høflighet |
+| `klarspraak.md` | Setningsbygning, passiv, substantivsyke, stive ord, digitale tjenester |
+| `engelsk-smitte.md` | Oversatte vendinger, lånte betydninger, norske avløserord |
+| `ord-om-mennesker.md` | Kjønn, hudfarge, alder – ord som kan såre |
+| `nynorsk.md` | Konsekvent nynorsk, passiv, vanlige feil, ordval |
 
 ## De vanligste feilene
 
@@ -115,11 +120,18 @@ Ti sjekker ligger i selve ferdigheten og dekker det meste. Detaljene ligger i
 | Eiendomsform | `Sivert's bil` | `Siverts bil` |
 | Høflighet | `Vennligst prøv igjen` | `Prøv igjen` |
 | Eiendomsord | `din konto` | `kontoen din` |
+| Komma | `For å melde deg på, må du …` | `For å melde deg på må du …` |
+| E-post | `Hei Anna,` | `Hei, Anna` |
+| Titler | `Daglig Leder` | `daglig leder` |
+| Forkortelser | `evt.`, `ifht.`, `mnd.` | `ev.`, `ift.`, `md.` |
+| Anglisisme | `når det kommer til` | `når det gjelder` |
 
 ## Kilder og forbehold
 
-Normene er hentet fra [Språkrådet](https://sprakradet.no) og
-[Klarspråk](https://klarsprak.no). Ordformer og bøyning slår du opp i
+Normene er hentet fra [Språkrådet](https://sprakradet.no) – veiledningssidene
+om korrekt språk, [klarspråkssidene](https://sprakradet.no/klarsprak/) og alle
+de 1 122 svarene i spørsmål-og-svar-basen – og formulert med egne ord og
+eksempler. Ordformer og bøyning slår du opp i
 [Ordbøkene](https://ordbokene.no).
 
 Dette er en sammenfatning laget av andre. Den er **ikke** utgitt av, tilknyttet

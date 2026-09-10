@@ -26,7 +26,7 @@ export const TARGETS = [
     kind: "skill",
     path: ".claude/skills/sprakvask",
     // Den eneste som får hele ferdigheten med referansefiler. De andre leser
-    // én fil, så de får de ti sjekkene og en lenke til resten.
+    // én fil, så de får sjekkene og lenker til resten.
     detect: [".claude"],
   },
   {

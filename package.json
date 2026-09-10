@@ -1,6 +1,6 @@
 {
   "name": "sprakvask",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Norsk språkvask etter Språkrådets normer – for Claude Code, Cursor, Copilot, Codex og andre kodeagenter. Rettskriving, tegnsetting og klarspråk for bokmål og nynorsk.",
   "bin": {
     "sprakvask": "bin/install.mjs"

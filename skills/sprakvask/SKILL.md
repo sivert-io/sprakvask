@@ -1,7 +1,7 @@
 ---
 name: sprakvask
-description: "Norsk språkvask etter Språkrådets normer. Bruk når teksten som skrives eller rettes er på norsk – bokmål eller nynorsk – i kode, grensesnitt, e-post, dokumentasjon eller commit-meldinger. Fanger særlig feilene som oppstår når norsk skrives av noen som tenker på engelsk."
-version: 1.0.0
+description: "Norsk språkvask etter Språkrådets normer og klarspråksråd. Bruk når teksten som skrives eller rettes er på norsk – bokmål eller nynorsk – i grensesnitt, e-post, dokumentasjon, vilkår, commit-meldinger eller kommentarer i kode. Fanger særlig feilene som oppstår når norsk skrives av noen som tenker på engelsk."
+version: 1.2.0
 ---
 
 # Språkvask
@@ -9,13 +9,15 @@ version: 1.0.0
 Norsk tekst som ser ut som den er skrevet av en som kan norsk.
 
 «Språkvask» er det norske ordet for denne jobben: å gå gjennom en tekst og rette
-den språklig uten å endre hva den sier. Ferdigheten koder Språkrådets normer for
-rettskriving, tegnsetting og klarspråk, og legger til det de ikke dekker – hva
-som avslører at en norsk tekst er skrevet med engelsk tankegang bak.
+den språklig uten å endre hva den sier. Ferdigheten bygger på Språkrådets normer
+for rettskriving, tegnsetting og klarspråk – veiledningssidene og hele
+spørsmål-og-svar-basen – og legger til det de ikke dekker: hva som avslører at
+en norsk tekst er skrevet med engelsk tankegang bak.
 
 **Kilde:** normene er hentet fra [Språkrådet](https://sprakradet.no) og
-[Klarspråk](https://klarsprak.no). Dette er en sammenfatning laget av andre.
-Den er ikke utgitt av, tilknyttet eller godkjent av Språkrådet.
+Språkrådets [klarspråkssider](https://sprakradet.no/klarsprak/). Dette er en
+sammenfatning laget av andre, med egne formuleringer og eksempler. Den er ikke
+utgitt av, tilknyttet eller godkjent av Språkrådet.
 
 ---
 
@@ -37,106 +39,149 @@ identifikatorer. `wantsFutureInvitations` skal ikke bli `ønskerFramtidigeInvita
 ## Rekkefølgen
 
 1. **Skriv eller rett teksten.**
-2. **Kjør de ti sjekkene under.** De er sortert etter hvor ofte de slår ut i
-   tekst skrevet av en maskin eller av en nordmann som har lest for mye engelsk.
+2. **Gå gjennom sjekkene under.** De er sortert etter hvor ofte de slår ut i
+   tekst skrevet av en maskin eller av en nordmann som har lest mye engelsk.
 3. **Er teksten lengre enn et avsnitt, les [klarspraak.md](references/klarspraak.md).**
    Rettskriving gjør en tekst riktig. Klarspråk gjør den lest.
 
-Trenger du detaljene, ligger de i `references/`. Ikke last dem med mindre du er
-i tvil – de ti sjekkene dekker det aller meste.
+Detaljene ligger i `references/`. Last bare filen du trenger – sjekkene under
+dekker det meste.
 
 ---
 
-## De ti sjekkene
+## Sjekkene
 
-### 1. Tankestrek, ikke bindestrek eller em-strek
+### 1. Tankestrek, ikke em-strek
 
-Norsk bruker **tankestrek** (–, U+2013) med mellomrom rundt:
+Norsk bruker **tankestrek** (–, U+2013). Som innskudd med mellomrom rundt:
 
 > Vi spiser sammen lørdag kveld – alle får det samme.
 
-Ikke bindestrek (`-`), som er for sammensetninger, og **aldri** em-strek (`—`),
-som er engelsk. Em-strek i norsk tekst er det sikreste enkelttegnet på at noe er
-oversatt fra engelsk.
+I intervaller **uten** mellomrom: `16.–18. oktober`, `kl. 9–15`. Streken betyr
+«fra … til», så ikke `fra kl. 13–15`.
 
-I intervaller står tankestreken **uten** mellomrom: `16.–18. oktober`, `kl. 9–15`.
+Aldri em-strek (`—`). Den finnes ikke i norsk og er det sikreste enkelttegnet
+på at teksten er oversatt fra engelsk.
 
-### 2. Ikke komma foran «og» i oppramsinger
+### 2. Komma: færre enn på engelsk, men noen andre steder
 
-Engelsk har Oxford-komma. Norsk har det ikke.
+- **Ikke komma foran `og`** i oppramsinger: `mat, drikke og premier`.
+- **Ikke komma etter et innledende uttrykk uten verb:**
+  ✗ `For å melde deg på, må du logge inn.` → ✓ `For å melde deg på må du
+  logge inn.`
+- **Komma etter en leddsetning som står først:** `Når du har betalt, er
+  plassen din.`
+- **Komma mellom to helsetninger** og alltid foran `men`: `Dørene åpner
+  klokka 16, og maten er klar klokka 17.`
+- **Nødvendig relativsetning** får komma etter, ikke foran: `Deltakere som
+  ikke har betalt, mister plassen.`
 
-- ✗ `mat, drikke, og premier`
-- ✓ `mat, drikke og premier`
+Se [tegnsetting.md](references/tegnsetting.md).
 
-Komma foran «og» settes bare mellom to **helsetninger**:
-
-> Vi åpner dørene klokka 16, og da er maten klar.
-
-### 3. Sammensatte ord skrives i ett ord
+### 3. Sammensatte ord i ett ord
 
 Særskriving er den mest utbredte feilen i norsk, og den endrer betydning.
 
-- ✗ `lørdags kvelden`, `data spill`, `påmeldings frist`
-- ✓ `lørdagskvelden`, `dataspill`, `påmeldingsfrist`
+- ✗ `lørdags kvelden`, `påmeldings frist`, `senior utvikler`
+- ✓ `lørdagskvelden`, `påmeldingsfrist`, `seniorutvikler`
 
-Er ordet langt, er det fortsatt ett ord. `arrangementsgjennomføring` er stygt,
-men det er ikke to ord.
+Men noen uttrykk **skal** stå i flere ord: `til stede`, `om bord`, `for
+øvrig`, `en del`, `etter hvert`, `i dag`.
 
-### 4. Anførselstegn er «…», ikke "…"
+### 4. Stor forbokstav bare der norsk har det
 
-> Han sa «vi ses på lørdag».
+- **Overskrifter og knapper:** bare første ord. ✗ `Meld Deg På` → ✓ `Meld deg
+  på`.
+- **Titler og stillinger er små**, også i signaturer: `daglig leder`,
+  `direktør Kari Nordmann`.
+- **`du` og `deg` er alltid små.** Stor `Du` er feil, ikke høflig.
+- **Avdelinger, styrer og roller i avtaler er små:** `styret`,
+  `kundeservice`, `kjøperen`.
+- **Måneder, ukedager, høytider, språk og nasjonaliteter er små:**
+  `mandag 16. oktober`, `jul`, `norsk`.
 
-Rette anførselstegn (`"`) er engelsk maskinskrift. Bruk `«»`. Enkle sitater
-inni: `‘…’`.
+Se [stor-liten-forbokstav.md](references/stor-liten-forbokstav.md).
 
-### 5. Klokkeslett og datoer
+### 5. Anførselstegn er «…»
 
-`kl. 09.00` og `kl. 09:00` er **begge** riktige – Språkrådet godtar punktum og
-kolon mellom timer og minutter. Velg ett og hold deg til det.
+> Hun skrev: «Vi ses på lørdag.»
 
-Tidsrom skrives med tankestrek uten mellomrom: `kl. 13–15`. Tankestreken betyr
-«fra–til», så skriv **ikke** `fra kl. 13–15`. Har du «fra», trenger du «til».
+**Komma står utenfor:** `«Vi ses», skrev hun.` Spørsmålstegn og utropstegn
+som hører til sitatet, står innenfor, og da uten komma: `«Kommer du?» spurte
+hun.` Sitat i sitat: `‘…’`.
 
-Datoer: `16. oktober 2026`. Ingen komma mellom dag og år. Måneder og ukedager
-skrives med **liten** forbokstav: `mandag`, `oktober`.
+### 6. Tall og beløp
 
-### 6. Tall: mellomrom som tusenskille, komma som desimalskille
+- Tusenskille er mellomrom, desimalskille er komma: `1 000`, `12 500 kroner`,
+  `3,5 timer`. Aldri `1,000` eller `3.5`.
+- Tall til og med tolv med bokstaver i løpende tekst – men vær konsekvent i
+  samme setning.
+- `450 kr` eller `450 kroner` – ikke punktum etter `kr`.
+- `25 %` med mellomrom eller `25 prosent`.
 
-- ✓ `1 000`, `12 500 kroner`, `3,5 timer`
-- ✗ `1,000`, `12,500`, `3.5`
+### 7. Datoer, klokkeslett og frister
 
-Tallene én til tolv skrives med bokstaver i løpende tekst, resten med siffer –
-med mindre teksten er teknisk eller full av tall, da er siffer greit hele veien.
+- `16. oktober 2026` eller `16.10.2026`. Aldri skråstrek.
+- `kl. 09.00` og `kl. 09:00` er **begge** riktige. Velg ett.
+- **`innen 1. oktober` er tvetydig.** Skriv `seinest 1. oktober` eller
+  `fristen er 1. oktober`.
 
-### 7. Overskrifter har bare stor forbokstav i første ord
+Se [tall-datoer.md](references/tall-datoer.md).
 
-Engelsk bruker Title Case. Norsk gjør ikke.
+### 8. E-posthilsener
 
-- ✗ `Meld Deg På NTLAN`
-- ✓ `Meld deg på NTLAN`
+- `Hei, Anna` – komma **foran** navnet, ikke etter. `Hei` alene på linjen
+  får ingen tegn.
+- Avslutningen har ingen komma, og tittelen har liten forbokstav:
 
-Egennavn beholder selvsagt stor forbokstav.
+  ```
+  Vennlig hilsen
+  Kari Nordmann
+  daglig leder
+  ```
 
-### 8. Eiendomsform uten apostrof
+- `Mvh.` frarådes i formell e-post. Skriv ordene ut.
 
-- ✓ `Sivert**s** bil`, `Norsk Tipping**s** lokaler`
-- ✗ `Sivert's bil`
+Se [e-post-og-brev.md](references/e-post-og-brev.md).
 
-Apostrof bare når navnet slutter på s, x eller z: `Anders' bil`, `Felix' hund`.
+### 9. Eiendomsform og bøyning uten apostrof
 
-### 9. Ikke oversett «please»
+- ✓ `Olas bil`, `NRKs sendinger`, `EUs regler`
+- ✗ `Ola's bil`, `NRK's sendinger`
+- Bøyning av forkortelser med bindestrek: `pc-en`, `sms-en`, ikke `pc'en`.
 
-Norsk har ikke et ord for «please» i imperativ. «Vennligst» er stivt og lyder
-som en oversettelse. Skriv setningen om:
+Apostrof bare når navnet ender på s, x eller z: `Anders' bil`, `Felix' hund`.
 
-- ✗ `Vennligst fyll ut alle feltene.`
-- ✓ `Fyll ut alle feltene.`
-- ✓ `Du må fylle ut alle feltene for å gå videre.`
+### 10. Forkortelser
 
-### 10. Eiendomspronomen står etter substantivet
+- `ev.`, ikke `evt.` (som betyr «etter vår tidsregning»). `ift.`, ikke
+  `ifht.` `md.`, ikke `mnd.` `osv.`, ikke `etc.`
+- Aldri to punktum: `… mat, drikke osv.`
+- I løpende tekst er det som regel bedre å skrive ordet ut.
+
+Se [forkortelser.md](references/forkortelser.md).
+
+### 11. Oversatt engelsk
+
+Riktige ord i engelsk rekkefølge. De vanligste:
+
+| Oversatt | Norsk |
+| --- | --- |
+| `Vennligst fyll ut …` | `Fyll ut …` |
+| `når det kommer til` | `når det gjelder` |
+| `ta plass` (take place) | `finne sted`, `skje` |
+| `Trykk knappen` | `Trykk på knappen` |
+| `du trenger å` | `du må` |
+| `adressere et problem` | `ta tak i`, `løse` |
+| `Vi beklager ulempen` | si hva som skjedde og hva som skjer nå |
+
+Les [engelsk-smitte.md](references/engelsk-smitte.md) hvis teksten er skrevet
+av en maskin eller oversatt.
+
+### 12. Eiendomsord etter substantivet
 
 Norsk foretrekker bestemt form med etterstilt eiendomsord. Foranstilt er ikke
-feil, men det er engelsk rytme og virker trykket.
+feil, men det er engelsk rytme og legger trykk på eieren.
 
 - ✗ `din konto`, `ditt passord`, `dine opplysninger`
 - ✓ `kontoen din`, `passordet ditt`, `opplysningene dine`
@@ -147,6 +192,11 @@ feil, men det er engelsk rytme og virker trykket.
 
 Si hva du rettet, kort, og bare det som betyr noe. «Rettet særskriving i tre
 overskrifter» er nyttig. En liste over hvert komma er ikke.
+
+**Ikke rett det som er riktig.** Norsk har mange likestilte former –
+`frem`/`fram`, `hvis`/`viss`, `mer`/`mere`, `kl. 09.00`/`kl. 09:00`. Da er
+jobben å gjøre teksten konsekvent, ikke å velge din favoritt. Private navn på
+firmaer og produkter skrives slik eieren skriver dem.
 
 Er du i tvil om et ord eller en bøyning, slå det opp i
 [Bokmålsordboka og Nynorskordboka](https://ordbokene.no) framfor å gjette.
@@ -160,9 +210,14 @@ Last dem én av gangen, og bare når du trenger dem.
 
 | Fil | Når |
 | --- | --- |
-| [tegnsetting.md](references/tegnsetting.md) | Komma, kolon, semikolon, parenteser, apostrof |
-| [ordvalg.md](references/ordvalg.md) | Særskriving, og/å, de/dem, sin/hans, vanlige forvekslinger |
-| [tall-datoer.md](references/tall-datoer.md) | Tall, datoer, klokkeslett, valuta, prosent, forkortelser |
-| [klarspraak.md](references/klarspraak.md) | Setningsbygning, passiv, substantivsjuke, du-form |
-| [engelsk-smitte.md](references/engelsk-smitte.md) | Hva som avslører oversatt norsk. Les denne hvis teksten er skrevet av en maskin |
-| [nynorsk.md](references/nynorsk.md) | Der nynorsk skiller seg fra bokmål |
+| [tegnsetting.md](references/tegnsetting.md) | Komma, punktum, kolon, tankestrek, anførselstegn, apostrof, punktlister |
+| [stor-liten-forbokstav.md](references/stor-liten-forbokstav.md) | Overskrifter, titler, institusjoner, du/De, merkenavn |
+| [tall-datoer.md](references/tall-datoer.md) | Tall, beløp, prosent, datoer, klokkeslett, frister, telefonnumre, paragrafer |
+| [forkortelser.md](references/forkortelser.md) | Punktum eller ikke, vanlige feil, de vanligste forkortelsene |
+| [ordvalg.md](references/ordvalg.md) | Særskriving, og/å, da/når, de/dem, sin/deres, forvekslinger, faste uttrykk, preposisjoner, stavemåter |
+| [grammatikk.md](references/grammatikk.md) | Bøyning, samsvar, partisipp, verb, pronomen, konsekvens |
+| [e-post-og-brev.md](references/e-post-og-brev.md) | Hilsener, signatur, emnefelt, høflighet |
+| [klarspraak.md](references/klarspraak.md) | Setningsbygning, passiv, substantivsyke, stive ord, digitale tjenester |
+| [engelsk-smitte.md](references/engelsk-smitte.md) | Oversatte vendinger, lånte betydninger, norske avløserord |
+| [ord-om-mennesker.md](references/ord-om-mennesker.md) | Kjønn, hudfarge, alder – ord som kan såre |
+| [nynorsk.md](references/nynorsk.md) | Konsekvent nynorsk, passiv, vanlige feil, ordval |
