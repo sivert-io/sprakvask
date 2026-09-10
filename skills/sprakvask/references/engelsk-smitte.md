@@ -15,7 +15,6 @@ lette å kjenne igjen og vanskelige å få øye på selv.
 | `"..."` rette anførselstegn | Bruk `«...»` |
 | `'` apostrof i eiendomsform | `Sivert's` → `Siverts` |
 | `...` tre punktum | Bruk ellipsetegnet `…` |
-| `09:00` | Bruk punktum: `09.00` |
 | `1,000` | Tusenskille er mellomrom: `1 000` |
 | `3.5` | Desimalskille er komma: `3,5` |
 

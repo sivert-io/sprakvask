@@ -44,7 +44,8 @@ ISO-formen `2026-10-16` er riktig i data og logger, ikke i tekst folk leser.
 
 ## Klokkeslett
 
-`kl. 09.00`. Punktum, ikke kolon – kolon er engelsk.
+`kl. 09.00` eller `kl. 09:00`. Begge er riktige – Språkrådet godtar punktum og
+kolon. Vær konsekvent innenfor samme tekst.
 
 - Intervall: `kl. 9–15` eller `kl. 09.00–15.00`
 - Hele timer kan skrives uten nuller: `kl. 9`
@@ -80,5 +81,8 @@ Lovnavn har liten forbokstav: `angrerettloven`, `forbrukerkjøpsloven`.
 
 ## Telefonnumre
 
-Åtte siffer, gruppert `12 34 56 78`. Mobilnumre grupperes ofte `123 45 678` –
-begge deler er i bruk, men vær konsekvent innenfor samme flate.
+Grupper på **to og to** siffer, for både fasttelefon og mobil:
+`22 22 22 22`. Det står i nummerforskriften § 16, og har gjeldt mobil også
+siden 22. mai 2019.
+
+Unntak: 8xx-serien skrives `800 22 222`, og 116-serien i grupper à tre.

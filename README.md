@@ -110,7 +110,6 @@ Ti sjekker ligger i selve ferdigheten og dekker det meste. Detaljene ligger i
 | Oxford-komma | `mat, drikke, og premier` | `mat, drikke og premier` |
 | Særskriving | `lørdags kvelden` | `lørdagskvelden` |
 | Anførselstegn | `"hei"` | `«hei»` |
-| Klokkeslett | `kl. 09:00` | `kl. 09.00` |
 | Tusenskille | `1,000` | `1 000` |
 | Overskrifter | `Meld Deg På` | `Meld deg på` |
 | Eiendomsform | `Sivert's bil` | `Siverts bil` |

@@ -89,9 +89,13 @@ men det er ikke to ord.
 Rette anførselstegn (`"`) er engelsk maskinskrift. Bruk `«»`. Enkle sitater
 inni: `‘…’`.
 
-### 5. Klokkeslett med punktum
+### 5. Klokkeslett og datoer
 
-`kl. 09.00`, ikke `kl. 09:00`. Kolon er engelsk og amerikansk.
+`kl. 09.00` og `kl. 09:00` er **begge** riktige – Språkrådet godtar punktum og
+kolon mellom timer og minutter. Velg ett og hold deg til det.
+
+Tidsrom skrives med tankestrek uten mellomrom: `kl. 13–15`. Tankestreken betyr
+«fra–til», så skriv **ikke** `fra kl. 13–15`. Har du «fra», trenger du «til».
 
 Datoer: `16. oktober 2026`. Ingen komma mellom dag og år. Måneder og ukedager
 skrives med **liten** forbokstav: `mandag`, `oktober`.
