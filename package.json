@@ -1,0 +1,38 @@
+{
+  "name": "sprakvask",
+  "version": "1.0.0",
+  "description": "Norsk språkvask etter Språkrådets normer, som ferdighet for Claude Code og andre agenter.",
+  "bin": {
+    "sprakvask": "bin/install.mjs"
+  },
+  "files": [
+    "bin",
+    "skills",
+    ".claude-plugin"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "skill",
+    "norsk",
+    "bokmål",
+    "nynorsk",
+    "språkrådet",
+    "klarspråk",
+    "norwegian"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sivert-io/sprakvask.git"
+  },
+  "homepage": "https://github.com/sivert-io/sprakvask#readme",
+  "bugs": {
+    "url": "https://github.com/sivert-io/sprakvask/issues"
+  },
+  "author": "sivert-io"
+}

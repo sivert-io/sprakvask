@@ -1,0 +1,11 @@
+{
+  "name": "sprakvask",
+  "owner": { "name": "sivert-io", "url": "https://github.com/sivert-io" },
+  "plugins": [
+    {
+      "name": "sprakvask",
+      "source": "./",
+      "description": "Norsk språkvask etter Språkrådets normer. Rettskriving, tegnsetting, klarspråk – og det som avslører at norsk er tenkt på engelsk."
+    }
+  ]
+}
