@@ -14,7 +14,7 @@ rettskriving, tegnsetting og klarspråk, og legger til det de ikke dekker – hv
 som avslører at en norsk tekst er skrevet med engelsk tankegang bak.
 
 **Kilde:** normene er hentet fra [Språkrådet](https://sprakradet.no) og
-[Klarspråk](https://klarspraak.no). Dette er en sammenfatning laget av andre.
+[Klarspråk](https://klarsprak.no). Dette er en sammenfatning laget av andre.
 Den er ikke utgitt av, tilknyttet eller godkjent av Språkrådet.
 
 ---

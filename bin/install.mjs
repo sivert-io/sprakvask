@@ -1,63 +1,171 @@
 #!/usr/bin/env node
 /**
- * Legger ferdigheten der agenten leter etter den.
+ * Legger reglene der agenten din leter etter dem.
  *
- * Som standard i prosjektet du står i (`.claude/skills/`), fordi en språknorm
- * hører til teksten den vasker: et norsk prosjekt vil ha den, et engelsk vil
- * ikke. `--global` legger den i `~/.claude/skills/` for alle prosjekter.
+ * Uten argumenter ser den etter hvilke agenter prosjektet allerede bruker og
+ * skriver til dem. Finner den ingen, faller den tilbake på `AGENTS.md`, som er
+ * det nærmeste noe felles standard.
  *
  * Kopierer framfor å lenke. En symlink inn i `node_modules` peker ingen steder
- * den dagen noen kjører `npm ci`, og da forsvinner ferdigheten uten et ord.
+ * den dagen noen kjører `npm ci`, og da forsvinner reglene uten et ord.
  */
-import { cp, mkdir, rm, readFile } from "node:fs/promises";
+import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { homedir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { END, START, TARGETS } from "./targets.mjs";
+
 const here = path.dirname(fileURLToPath(import.meta.url));
-/*
-  Én kopi av ferdigheten, ikke to.
+const skillDir = path.join(here, "..", "skills", "sprakvask");
 
-  `skills/sprakvask/` er der markedsplassen i Claude Code venter å finne den, så
-  det er den som er kilden – og det er den npm-installasjonen kopierer fra. Et
-  eget `skill/`-kart ved siden av ville vært to steder å rette den samme
-  skrivefeilen, og det ene ville blitt glemt.
-*/
-const source = path.join(here, "..", "skills", "sprakvask");
+const argv = process.argv.slice(2);
+const flags = new Set(argv.filter((a) => a.startsWith("-")));
+const named = argv.filter((a) => !a.startsWith("-"));
 
-const args = new Set(process.argv.slice(2));
-const global = args.has("--global") || args.has("-g");
-const root = global ? homedir() : process.cwd();
-const target = path.join(root, ".claude", "skills", "sprakvask");
-
-if (args.has("--help") || args.has("-h")) {
+if (flags.has("--help") || flags.has("-h")) {
   console.log(`
-  sprakvask – norsk språkvask som ferdighet
+  sprakvask – norsk språkvask for kodeagenter
 
-    npx sprakvask             legger den i dette prosjektet (.claude/skills/)
-    npx sprakvask --global    legger den i ~/.claude/skills/ for alle prosjekter
+    npx sprakvask                 finner agentene prosjektet bruker
+    npx sprakvask --all           skriver til alle støttede
+    npx sprakvask cursor claude   bare disse
+    npx sprakvask --global        Claude Code, for alle prosjekter
+    npx sprakvask --list          viser hva som støttes
+    npx sprakvask --remove        fjerner det som er lagt inn
 
-  Etterpå: start agenten på nytt, og be den om å vaske teksten.
+  Støttet: ${TARGETS.map((t) => t.id).join(", ")}
 `);
   process.exit(0);
 }
 
-if (!existsSync(source)) {
-  console.error("Fant ikke ferdigheten i pakken. Er den installert riktig?");
-  process.exit(1);
+if (flags.has("--list")) {
+  console.log();
+  for (const t of TARGETS) console.log(`  ${t.id.padEnd(10)} ${t.name}\n  ${" ".repeat(10)} ${t.path}\n`);
+  process.exit(0);
 }
 
-const replacing = existsSync(target);
-await mkdir(path.dirname(target), { recursive: true });
-if (replacing) await rm(target, { recursive: true, force: true });
-await cp(source, target, { recursive: true });
+/*
+  De ti sjekkene, klippet ut av selve ferdigheten.
+
+  Agentene som leser én fil får ikke referansemappen, så de får kjernen – men
+  den hentes herfra i stedet for å skrives av. To kopier av de samme reglene er
+  to steder å rette den samme feilen, og den ene ville blitt glemt.
+*/
+async function rulesText() {
+  const skill = await readFile(path.join(skillDir, "SKILL.md"), "utf8");
+  const from = skill.indexOf("## De ti sjekkene");
+  const to = skill.indexOf("## Etter sjekkene");
+  const core = from >= 0 && to > from ? skill.slice(from, to).trim() : skill;
+
+  return [
+    "# Språkvask – norsk språkvask etter Språkrådets normer",
+    "",
+    "Gjelder all norsk tekst du skriver eller retter: grensesnitt, e-post,",
+    "dokumentasjon, commit-meldinger, vilkår. Gjelder **ikke** kode,",
+    "variabelnavn eller API-felt – `wantsFutureInvitations` skal ikke oversettes.",
+    "",
+    core,
+    "",
+    "---",
+    "",
+    "Fullstendige regler, inkludert nynorsk og klarspråk:",
+    "https://github.com/sivert-io/sprakvask",
+  ].join("\n");
+}
+
+/** Skriver et avmerket avsnitt inn i en fil brukeren eier, uten å røre resten. */
+function withSection(existing, body) {
+  const block = `${START}\n${body}\n${END}`;
+  if (existing.includes(START) && existing.includes(END)) {
+    const before = existing.slice(0, existing.indexOf(START));
+    const after = existing.slice(existing.indexOf(END) + END.length);
+    return `${before}${block}${after}`;
+  }
+  const base = existing.trimEnd();
+  return base ? `${base}\n\n${block}\n` : `${block}\n`;
+}
+
+function stripSection(existing) {
+  if (!existing.includes(START) || !existing.includes(END)) return existing;
+  const before = existing.slice(0, existing.indexOf(START)).trimEnd();
+  const after = existing.slice(existing.indexOf(END) + END.length).trimStart();
+  return [before, after].filter(Boolean).join("\n\n") + "\n";
+}
+
+const root = flags.has("--global") || flags.has("-g") ? homedir() : process.cwd();
+
+/** Hvilke agenter dette prosjektet allerede bruker. */
+function detect() {
+  return TARGETS.filter((t) => t.detect.some((d) => existsSync(path.join(root, d))));
+}
+
+let chosen;
+if (named.length > 0) {
+  chosen = TARGETS.filter((t) => named.includes(t.id));
+  const unknown = named.filter((n) => !TARGETS.some((t) => t.id === n));
+  if (unknown.length > 0) {
+    console.error(`\n  Kjenner ikke: ${unknown.join(", ")}\n  Prøv: npx sprakvask --list\n`);
+    process.exit(1);
+  }
+} else if (flags.has("--all")) {
+  chosen = TARGETS;
+} else if (flags.has("--global")) {
+  chosen = TARGETS.filter((t) => t.id === "claude");
+} else {
+  chosen = detect();
+  if (chosen.length === 0) {
+    // Ingenting å gå etter. AGENTS.md er den flest kan lese.
+    chosen = TARGETS.filter((t) => t.id === "agents");
+  }
+}
+
+const removing = flags.has("--remove");
+const body = removing ? "" : await rulesText();
+const done = [];
+
+for (const target of chosen) {
+  const full = path.join(root, target.path);
+
+  if (target.kind === "skill") {
+    if (removing) {
+      if (existsSync(full)) await rm(full, { recursive: true, force: true });
+    } else {
+      await mkdir(path.dirname(full), { recursive: true });
+      await rm(full, { recursive: true, force: true });
+      await cp(skillDir, full, { recursive: true });
+    }
+  } else if (target.kind === "file") {
+    if (removing) {
+      if (existsSync(full)) await rm(full, { force: true });
+    } else {
+      await mkdir(path.dirname(full), { recursive: true });
+      await writeFile(full, (target.frontmatter ?? "") + body + "\n");
+    }
+  } else {
+    // En fil brukeren eier. Bare vårt eget avsnitt røres.
+    const existing = existsSync(full) ? await readFile(full, "utf8") : "";
+    if (removing) {
+      if (!existing) continue;
+      await writeFile(full, stripSection(existing));
+    } else {
+      await mkdir(path.dirname(full), { recursive: true });
+      await writeFile(full, withSection(existing, body));
+    }
+  }
+
+  done.push(target);
+}
 
 const version = JSON.parse(await readFile(path.join(here, "..", "package.json"), "utf8")).version;
-const where = path.relative(process.cwd(), target) || target;
 
-console.log(`
-  Språkvask ${version} ${replacing ? "oppdatert" : "lagt"} i ${where}
-
-  Start agenten på nytt, så plukker den den opp.
-`);
+console.log();
+if (done.length === 0) {
+  console.log("  Ingenting å gjøre.");
+} else {
+  console.log(`  Språkvask ${version} ${removing ? "fjernet fra" : "lagt inn for"}:`);
+  for (const t of done) console.log(`    ${t.name.padEnd(42)} ${t.path}`);
+  if (!removing) console.log("\n  Start agenten på nytt, så plukker den det opp.");
+}
+console.log();

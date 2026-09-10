@@ -5,7 +5,7 @@
   <img src="assets/logo-light.svg" alt="Språkvask" width="440">
 </picture>
 
-**Norsk språkvask etter Språkrådets normer – for Claude Code og andre kodeagenter**
+**Norsk språkvask etter Språkrådets normer – for Claude Code, Cursor, Copilot, Codex og resten**
 
 [![npm](https://img.shields.io/npm/v/sprakvask?color=%238FB0DA&label=npm)](https://www.npmjs.com/package/sprakvask)
 [![lisens](https://img.shields.io/badge/lisens-MIT-8FB0DA)](LICENSE)
@@ -39,26 +39,50 @@ engelsk ordstilling, og em-streken finnes ikke i norsk.
 
 ## Installer
 
-**I ett prosjekt:**
-
 ```bash
 npx sprakvask
 ```
 
-**For alle prosjekter:**
+Den finner ut hvilke agenter prosjektet allerede bruker og skriver reglene dit
+de leter. Er det ingen å gå etter, lander de i `AGENTS.md`.
 
 ```bash
-npx sprakvask --global
-```
-
-**Som plugin i Claude Code:**
-
-```
-/plugin marketplace add sivert-io/sprakvask
-/plugin install sprakvask@sprakvask
+npx sprakvask --all       # alle støttede
+npx sprakvask cursor      # bare én
+npx sprakvask --global    # Claude Code, for alle prosjekter
+npx sprakvask --list      # hva som støttes
+npx sprakvask --remove    # angre
 ```
 
 Start agenten på nytt etterpå.
+
+### Hvor den skriver
+
+| Agent | Fil |
+| --- | --- |
+| Claude Code | `.claude/skills/sprakvask/` |
+| Codex, Jules, Factory, Amp | `AGENTS.md` |
+| Cursor | `.cursor/rules/sprakvask.mdc` |
+| Windsurf | `.windsurf/rules/sprakvask.md` |
+| GitHub Copilot | `.github/copilot-instructions.md` |
+| Cline | `.clinerules/sprakvask.md` |
+| Zed | `.rules` |
+| Aider | `CONVENTIONS.md` |
+
+Det finnes ingen felles standard for dette. Innholdet er den samme prosaen
+uansett – bare stien og frontmatteren skiller. Claude Code får hele ferdigheten
+med referansefiler; de andre leser én fil, så de får de ti sjekkene og en lenke
+til resten.
+
+Filene flere deler på – `AGENTS.md`, `copilot-instructions.md`, `.rules`,
+`CONVENTIONS.md` – tilhører deg. Der skrives det inn et avmerket avsnitt som
+kan oppdateres og fjernes igjen uten at noe annet i fila røres.
+
+Som plugin i Claude Code, hvis du heller vil ha den slik:
+
+```
+/plugin marketplace add sivert-io/sprakvask
+```
 
 ## Hva den gjør
 
@@ -96,7 +120,7 @@ Ti sjekker ligger i selve ferdigheten og dekker det meste. Detaljene ligger i
 ## Kilder og forbehold
 
 Normene er hentet fra [Språkrådet](https://sprakradet.no) og
-[Klarspråk](https://klarspraak.no). Ordformer og bøyning slår du opp i
+[Klarspråk](https://klarsprak.no). Ordformer og bøyning slår du opp i
 [Ordbøkene](https://ordbokene.no).
 
 Dette er en sammenfatning laget av andre. Den er **ikke** utgitt av, tilknyttet

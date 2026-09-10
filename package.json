@@ -1,7 +1,7 @@
 {
   "name": "sprakvask",
-  "version": "1.0.0",
-  "description": "Norsk språkvask etter Språkrådets normer – skill for Claude Code. Rettskriving, tegnsetting og klarspråk for bokmål og nynorsk. Norwegian language linting skill for AI coding agents.",
+  "version": "1.1.0",
+  "description": "Norsk språkvask etter Språkrådets normer – for Claude Code, Cursor, Copilot, Codex og andre kodeagenter. Rettskriving, tegnsetting og klarspråk for bokmål og nynorsk.",
   "bin": {
     "sprakvask": "bin/install.mjs"
   },
@@ -38,7 +38,15 @@
     "skill",
     "agent-skill",
     "ai-agent",
-    "mcp"
+    "mcp",
+    "cursor",
+    "copilot",
+    "codex",
+    "windsurf",
+    "cline",
+    "aider",
+    "zed",
+    "agents-md"
   ],
   "license": "MIT",
   "repository": {
