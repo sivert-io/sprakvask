@@ -1,10 +1,33 @@
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/logo.svg">
+  <img src="assets/logo-light.svg" alt="Språkvask" width="440">
+</picture>
+
+**Norsk språkvask etter Språkrådets normer – for Claude Code og andre kodeagenter**
+
+[![npm](https://img.shields.io/npm/v/sprakvask?color=%238FB0DA&label=npm)](https://www.npmjs.com/package/sprakvask)
+[![lisens](https://img.shields.io/badge/lisens-MIT-8FB0DA)](LICENSE)
+
+</div>
+
+---
+
 # Språkvask
 
 Norsk tekst som ser ut som den er skrevet av en som kan norsk.
 
-En ferdighet for Claude Code og andre kodeagenter. Den koder Språkrådets normer
-for rettskriving, tegnsetting og klarspråk – og legger til det normene ikke
-dekker: hva som avslører at en norsk tekst er tenkt på engelsk.
+En **skill** for Claude Code – og et vanlig sett med regler for enhver kodeagent
+som skriver norsk. Den koder **Språkrådets** normer for rettskriving,
+tegnsetting og klarspråk, og legger til det normene ikke dekker: hva som
+avslører at en norsk tekst er tenkt på engelsk.
+
+> **In English:** a Norwegian language skill for Claude Code and other coding
+> agents. It encodes the orthography, punctuation and plain-language norms
+> published by Språkrådet (the Language Council of Norway), and catches the
+> tells of Norwegian written by someone thinking in English. Works for both
+> written standards, bokmål and nynorsk.
 
 ```
 ✗  Vennligst fyll ut ditt navn — vi sender deg en bekreftelse.

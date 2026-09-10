@@ -1,7 +1,7 @@
 {
   "name": "sprakvask",
   "version": "1.0.0",
-  "description": "Norsk språkvask etter Språkrådets normer, som ferdighet for Claude Code og andre agenter.",
+  "description": "Norsk språkvask etter Språkrådets normer – skill for Claude Code. Rettskriving, tegnsetting og klarspråk for bokmål og nynorsk. Norwegian language linting skill for AI coding agents.",
   "bin": {
     "sprakvask": "bin/install.mjs"
   },
@@ -15,15 +15,30 @@
     "node": ">=18"
   },
   "keywords": [
-    "claude",
-    "claude-code",
-    "skill",
+    "sprakradet",
+    "språkrådet",
+    "sprakvask",
+    "språkvask",
+    "klarsprak",
+    "klarspråk",
     "norsk",
+    "norwegian",
+    "bokmal",
     "bokmål",
     "nynorsk",
-    "språkrådet",
-    "klarspråk",
-    "norwegian"
+    "rettskriving",
+    "tegnsetting",
+    "korrektur",
+    "grammar",
+    "linting",
+    "language",
+    "claude",
+    "claude-code",
+    "claude-skill",
+    "skill",
+    "agent-skill",
+    "ai-agent",
+    "mcp"
   ],
   "license": "MIT",
   "repository": {
