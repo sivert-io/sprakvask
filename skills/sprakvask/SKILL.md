@@ -1,7 +1,7 @@
 ---
 name: sprakvask
 description: "Norsk språkvask etter Språkrådets normer og klarspråksråd. Bruk når teksten som skrives eller rettes er på norsk – bokmål eller nynorsk – i grensesnitt, e-post, dokumentasjon, vilkår, commit-meldinger eller kommentarer i kode. Fanger særlig feilene som oppstår når norsk skrives av noen som tenker på engelsk."
-version: 1.2.0
+version: 1.3.0
 ---
 
 # Språkvask
@@ -43,6 +43,8 @@ identifikatorer. `wantsFutureInvitations` skal ikke bli `ønskerFramtidigeInvita
    tekst skrevet av en maskin eller av en nordmann som har lest mye engelsk.
 3. **Er teksten lengre enn et avsnitt, les [klarspraak.md](references/klarspraak.md).**
    Rettskriving gjør en tekst riktig. Klarspråk gjør den lest.
+4. **Skriver du README, dokumentasjon, commit-meldinger eller PR-beskrivelser,
+   se [teksttyper.md](references/teksttyper.md).**
 
 Detaljene ligger i `references/`. Last bare filen du trenger – sjekkene under
 dekker det meste.
@@ -178,7 +180,23 @@ Riktige ord i engelsk rekkefølge. De vanligste:
 Les [engelsk-smitte.md](references/engelsk-smitte.md) hvis teksten er skrevet
 av en maskin eller oversatt.
 
-### 12. Eiendomsord etter substantivet
+### 12. KI-preg
+
+Da Språkrådet testet ChatGPT, handlet de fleste feilene på bokmål om
+tegnsetting og store og små bokstaver – sjekk 2 og 4. I tillegg:
+
+- **Stryk innledninger og avslutninger som ikke sier noe:** `Det er verdt å
+  merke seg at …`, `Kort oppsummert …`, et sluttavsnitt som gjentar teksten.
+- **Ikke oppblåste ord:** `sømløs`, `robust`, `banebrytende`, `helhetlig`.
+  Si hva det faktisk gjør.
+- **Én form per ord.** Språkmodeller veksler mellom `frem` og `fram`, `stein`
+  og `sten` i samme tekst.
+- **Ikke kolon i hver overskrift**, fet skrift overalt eller emoji som
+  punktmarkører.
+
+Se [ki-markorer.md](references/ki-markorer.md).
+
+### 13. Eiendomsord etter substantivet
 
 Norsk foretrekker bestemt form med etterstilt eiendomsord. Foranstilt er ikke
 feil, men det er engelsk rytme og legger trykk på eieren.
@@ -219,5 +237,7 @@ Last dem én av gangen, og bare når du trenger dem.
 | [e-post-og-brev.md](references/e-post-og-brev.md) | Hilsener, signatur, emnefelt, høflighet |
 | [klarspraak.md](references/klarspraak.md) | Setningsbygning, passiv, substantivsyke, stive ord, digitale tjenester |
 | [engelsk-smitte.md](references/engelsk-smitte.md) | Oversatte vendinger, lånte betydninger, norske avløserord |
+| [ki-markorer.md](references/ki-markorer.md) | Oppblåste ord, tomme fraser og mønstre som avslører KI-tekst |
+| [teksttyper.md](references/teksttyper.md) | Grensesnitt, dokumentasjon, README, commit, PR, versjonsmerknader, fagspråk |
 | [ord-om-mennesker.md](references/ord-om-mennesker.md) | Kjønn, hudfarge, alder – ord som kan såre |
 | [nynorsk.md](references/nynorsk.md) | Konsekvent nynorsk, passiv, vanlige feil, ordval |

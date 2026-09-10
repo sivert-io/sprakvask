@@ -90,8 +90,8 @@ Den slår inn når teksten er norsk – i grensesnitt, e-poster, dokumentasjon,
 commit-meldinger, vilkår. Den rører ikke kode: `wantsFutureInvitations` blir
 ikke `ønskerFramtidigeInvitasjoner`.
 
-Tolv sjekker ligger i selve ferdigheten og dekker det meste. Detaljene ligger
-i `references/` og lastes bare ved tvil:
+Tretten sjekker ligger i selve ferdigheten og dekker det meste. Detaljene
+ligger i `references/` og lastes bare ved tvil:
 
 | Fil | Innhold |
 | --- | --- |
@@ -104,6 +104,8 @@ i `references/` og lastes bare ved tvil:
 | `e-post-og-brev.md` | Hilsener, signatur, emnefelt, høflighet |
 | `klarspraak.md` | Setningsbygning, passiv, substantivsyke, stive ord, digitale tjenester |
 | `engelsk-smitte.md` | Oversatte vendinger, lånte betydninger, norske avløserord |
+| `ki-markorer.md` | Oppblåste ord, tomme fraser og mønstre som avslører KI-tekst |
+| `teksttyper.md` | Grensesnitt, dokumentasjon, README, commit, PR, versjonsmerknader, fagspråk |
 | `ord-om-mennesker.md` | Kjønn, hudfarge, alder – ord som kan såre |
 | `nynorsk.md` | Konsekvent nynorsk, passiv, vanlige feil, ordval |
 
@@ -125,14 +127,18 @@ i `references/` og lastes bare ved tvil:
 | Titler | `Daglig Leder` | `daglig leder` |
 | Forkortelser | `evt.`, `ifht.`, `mnd.` | `ev.`, `ift.`, `md.` |
 | Anglisisme | `når det kommer til` | `når det gjelder` |
+| KI-preg | `Det er verdt å merke seg at …` | stryk, begynn med poenget |
 
 ## Kilder og forbehold
 
 Normene er hentet fra [Språkrådet](https://sprakradet.no) – veiledningssidene
 om korrekt språk, [klarspråkssidene](https://sprakradet.no/klarsprak/) og alle
 de 1 122 svarene i spørsmål-og-svar-basen – og formulert med egne ord og
-eksempler. Ordformer og bøyning slår du opp i
-[Ordbøkene](https://ordbokene.no).
+eksempler. Kapitlet om KI-preg bygger på Språkrådets test av ChatGPT,
+[«KI-språkets fallgruver»](https://sprakradet.no/aktuelt/ki-sprakets-fallgruver/).
+Ideen til kapitlene om KI-preg og teksttyper kommer fra tekstforfatter-skillen i
+[Altinn Studio-dokumentasjonen](https://github.com/Altinn/altinn-studio-docs).
+Ordformer og bøyning slår du opp i [Ordbøkene](https://ordbokene.no).
 
 Dette er en sammenfatning laget av andre. Den er **ikke** utgitt av, tilknyttet
 eller godkjent av Språkrådet, og den erstatter ikke å slå opp når du er i tvil.

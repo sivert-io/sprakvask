@@ -37,7 +37,8 @@ etter.
 ## Struktur
 
 - **Overskrifter som sier noe.** `Slik melder du deg av` er bedre enn
-  `Avmelding`. Leseren skal kunne skumme overskriftene og vite hva som står.
+  `Avmelding` og `Hvordan melde seg av` (engelsk *how to*). Leseren skal kunne
+  skumme overskriftene og vite hva som står.
 - Ett hovedpoeng per avsnitt.
 - Lange tekster: et kort sammendrag først. Det gjør ingenting å gjenta det
   til slutt.

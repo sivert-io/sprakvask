@@ -49,6 +49,8 @@ lån er nyttige når norsk mangler ord, og uheldige når vi har gode ord fra fø
 | for nå | foreløpig, inntil videre |
 | ha suksess, suksessfull | lykkes, vellykket |
 | i person | personlig; om oppmøte: fysisk |
+| tok et øyeblikk før hun svarte | ventet litt før hun svarte, nølte |
+| bor i Bergen, Norge | bor i Bergen |
 | i prosess med | i ferd med |
 | komfortabel med, OK med | synes det er greit |
 | møte et behov | dekke et behov |
@@ -124,6 +126,11 @@ Høfligheten ligger i setningen, ikke i et ord foran den.
 `sammenheng`, `følelser` og `påvirke` er som regel bedre.
 
 ## Engelske ord med gode norske avløsere
+
+Tilpass til leseren. I tekst til vanlige brukere er de norske ordene nesten
+alltid bedre. I tekst til utviklere står etablerte fagord som `commit`,
+`branch`, `pull request`, `bug` og `deploy` – der er det de norske ordene som
+virker fremmede. Se [teksttyper.md](teksttyper.md).
 
 | Engelsk | Norsk |
 | --- | --- |
