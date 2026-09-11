@@ -3,7 +3,7 @@ FROM nginx:1.29-alpine
 COPY site/nginx.conf /etc/nginx/conf.d/default.conf
 COPY site/index.html site/tokens.css site/robots.txt site/sitemap.xml /usr/share/nginx/html/
 COPY site/fonts /usr/share/nginx/html/fonts
-COPY assets/icon.svg assets/banner.png assets/og-image.png /usr/share/nginx/html/assets/
+COPY site/assets /usr/share/nginx/html/assets/
 
 EXPOSE 8080
 
