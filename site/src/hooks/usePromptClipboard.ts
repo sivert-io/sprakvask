@@ -2,11 +2,11 @@ import { useState, useCallback, useRef } from 'react';
 
 export function usePromptClipboard() {
   const [state, setState] = useState<string>();
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const copy = useCallback(async () => {
     if (timerRef.current) clearTimeout(timerRef.current);
-    const text = 'Forbedre denne teksten med Språkvask.';
+    const text = 'Bruk Språkvask til å forbedre denne teksten';
 
     try {
       await navigator.clipboard.writeText(text);

@@ -1,3 +1,5 @@
+import { ArrowSquareOut } from 'phosphor-react';
+
 export function Footer() {
   return (
     <footer className="footer">
@@ -8,11 +10,11 @@ export function Footer() {
       </p>
       <nav className="footer__links" aria-label="Prosjektlenker">
         <a href="https://github.com/sivert-io/sprakvask" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/arrow-square-out.svg" aria-hidden="true" />
+          <ArrowSquareOut size={14} weight="bold" />
           Kildekode
         </a>
         <a href="https://www.npmjs.com/package/sprakvask" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/arrow-square-out.svg" aria-hidden="true" />
+          <ArrowSquareOut size={14} weight="bold" />
           npm
         </a>
       </nav>

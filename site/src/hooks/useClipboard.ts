@@ -2,7 +2,7 @@ import { useState, useCallback, useRef } from 'react';
 
 export function useClipboard(text: string, onStatus?: (msg: string) => void) {
   const [state, setState] = useState<string>();
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const copy = useCallback(async () => {
     if (timerRef.current) clearTimeout(timerRef.current);

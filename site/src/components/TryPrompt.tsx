@@ -1,3 +1,4 @@
+import { Check } from 'phosphor-react';
 import { usePromptClipboard } from '../hooks/usePromptClipboard';
 
 export function TryPrompt() {
@@ -13,7 +14,11 @@ export function TryPrompt() {
         data-state={state}
         onClick={copy}
       >
-        «Forbedre denne teksten med Språkvask.»
+        <span className="try-idle">Bruk Språkvask til å forbedre denne teksten</span>
+        <span className="try-done">
+          Bruk Språkvask til å forbedre denne teksten
+          <Check size={14} weight="bold" style={{ marginLeft: '0.35em' }} />
+        </span>
       </button>
     </p>
   );
