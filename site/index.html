@@ -340,6 +340,36 @@
         font-weight: 700;
       }
 
+      .try__prompt {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35em;
+        cursor: pointer;
+        font: inherit;
+        font-size: var(--text-base);
+        font-style: italic;
+        color: var(--color-ink);
+        background: none;
+        border: none;
+        padding: 0;
+        transition:
+          transform 0.4s var(--ease-out),
+          opacity var(--dur-short) var(--ease-out);
+      }
+
+      .try__prompt:active {
+        transform: translateY(2px);
+      }
+
+      .try__prompt:hover {
+        opacity: 0.7;
+      }
+
+      .try__prompt:focus-visible {
+        outline: 2px solid var(--color-focus);
+        outline-offset: 2px;
+      }
+
       .facts {
         margin: var(--space-xl) 0 0;
         padding: 0;
@@ -597,8 +627,10 @@
               </button>
             </div>
             <p class="try">
-              <span>Start agenten på nytt, og skriv:</span
-              ><strong>Forbedre denne teksten med Språkvask.</strong>
+              <span>Start agenten på nytt, og skriv:</span>
+              <button class="try__prompt" type="button" data-copy-prompt>
+                «Forbedre denne teksten med Språkvask.»
+              </button>
             </p>
             <ul class="facts" aria-label="Om Språkvask">
               <li><strong>13</strong><span>språksjekker</span></li>
@@ -655,6 +687,20 @@
             ? "Kopiert: npx sprakvask"
             : "Kunne ikke kopiere. Kommandoen er merket.";
           resetTimer = setTimeout(() => delete copyButton.dataset.state, 2400);
+        });
+
+        const promptButton = document.querySelector("[data-copy-prompt]");
+        let promptResetTimer;
+
+        promptButton.addEventListener("click", async () => {
+          clearTimeout(promptResetTimer);
+          promptButton.dataset.state = "copied";
+          try {
+            await navigator.clipboard.writeText("Forbedre denne teksten med Språkvask.");
+          } catch {
+            promptButton.dataset.state = "failed";
+          }
+          promptResetTimer = setTimeout(() => delete promptButton.dataset.state, 2400);
         });
       })();
     </script>
