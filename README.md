@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/logo.svg">
-  <img src="assets/logo-light.svg" alt="Språkvask" width="440">
+  <source media="(prefers-color-scheme: dark)" srcset="site/public/assets/logo.svg">
+  <img src="site/public/assets/logo-light.svg" alt="Språkvask" width="440">
 </picture>
 
 **Norsk språkvask etter Språkrådets normer – for kodeagenter**

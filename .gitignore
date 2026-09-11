@@ -1,5 +1,34 @@
+# Dependencies and local caches
 node_modules/
-.DS_Store
+.cache/
+.vite/
+__pycache__/
+*.py[cod]
+
+# Generated builds, packages and TypeScript state
+/site/dist/
+*.tsbuildinfo
 *.tgz
-research/
-site/.env
+
+# Test, audit and design-tool output
+coverage/
+playwright-report/
+test-results/
+.unlighthouse/
+/site/.hallmark/
+
+# Local environment files (keep the documented template)
+.env
+.env.*
+!.env.example
+
+# Logs and local scratch work
+*.log
+/research/
+
+# OS and editor temporary files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~

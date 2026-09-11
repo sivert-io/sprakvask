@@ -1,6 +1,31 @@
 # sprakvask.no
 
-Statisk landingsside for Språkvask. Ingen byggetrinn eller JavaScript-rammeverk.
+Landingsside for Språkvask, bygget med React, TypeScript og Vite.
+
+## Lokal utvikling
+
+```sh
+cd site
+npm ci
+npm run dev
+```
+
+`npm run build` sjekker TypeScript og bygger siden til `dist/`.
+`npm run preview` viser det ferdige bygget lokalt.
+
+## Filer
+
+- `src/`: React-komponenter, stilark og funksjonalitet.
+- `public/`: skrifter, merkefiler, designtokens, robots.txt og sitemap.xml.
+- `BRAND.md`: skrifter, farger og generering av merkefilene.
+- `dist/`: generert ved bygging og ignorert av Git.
+
+Git ignorerer også lokale miljøfiler, hurtigbuffere, logger og testrapporter.
+Behold `.env.example`, låsefilen og merkefilene i `public/assets/` i Git;
+merkefilene brukes direkte av README-en og produksjonsbygget.
+
+Nettsiden og README-en i prosjektroten bruker merkefilene i `public/assets/`.
+Skriftene ligger bare i `public/fonts/`. Docker bruker det ferdige Vite-bygget.
 
 ## Oppstart på VM
 
@@ -99,4 +124,4 @@ docker compose -f site/compose.yaml up -d --build --wait
 
 Åpne `http://localhost:3544`. Domenet i canonical, sitemap og metadata er
 `https://sprakvask.no/`. Etter lansering: kontroller HTTPS, delingsbildet på
-`/assets/og-image.png` og send `/sitemap.xml` til Google Search Console.
+`/assets/banner.png` og send `/sitemap.xml` til Google Search Console.

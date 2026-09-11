@@ -1,28 +1,12 @@
-/* Hallmark · genre: editorial · macrostructure: Component Playground · theme: custom Språkvask · enrichment: none · nav: N9 · footer: Ft4
+/* Hallmark · genre: editorial · macrostructure: Component Playground · theme: stone and water · enrichment: none · nav: N9 · footer: Ft4
  * audience: developers using code agents · use: copy the install command · tone: editorial, quiet, technical
- * pre-emit critique: P5 H5 E5 S5 R5 V5
+ * pre-emit critique: P4 H5 E4 S4 R5 V4
  */
 @font-face {
   font-family: "Fraunces";
   src: url("/fonts/Fraunces.ttf") format("truetype");
   font-style: normal;
   font-weight: 100 900;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Fraunces";
-  src: url("/fonts/Fraunces-Italic.ttf") format("truetype");
-  font-style: italic;
-  font-weight: 100 900;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Schibsted Grotesk";
-  src: url("/fonts/schibsted-grotesk.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 400 700;
   font-display: swap;
 }
 
@@ -52,30 +36,6 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("/fonts/dm-sans/DMSans-Medium.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "DM Sans";
-  src: url("/fonts/dm-sans/DMSans-Medium-Italic.ttf") format("truetype");
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "DM Sans";
-  src: url("/fonts/dm-sans/DMSans-SemiBold.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "DM Sans";
   src: url("/fonts/dm-sans/DMSans-Bold.ttf") format("truetype");
   font-style: normal;
   font-weight: 700;
@@ -91,17 +51,19 @@
 }
 
 :root {
-  --color-paper: oklch(95% 0.004 255);
-  --color-paper-raised: oklch(99% 0.002 255);
-  --color-ink: oklch(23% 0.018 305);
-  --color-ink-soft: oklch(40% 0.018 305);
-  --color-muted: oklch(50% 0.016 305);
-  --color-rule: oklch(82% 0.009 275);
+  --color-paper: #c6cdd1;
+  --color-sheet: #e0e5e7;
+  --color-sheet-edge: #8c9ba3;
+  --color-paper-raised: #e9edef;
+  --color-ink: #293740;
+  --color-ink-soft: #3e4d57;
+  --color-muted: #465660;
+  --color-rule: #a6b3ba;
   --color-wave: oklch(59% 0.088 255);
   --color-wave-light: oklch(82% 0.047 250);
-  --color-accent: oklch(23% 0.018 305);
-  --color-accent-hover: oklch(32% 0.022 305);
-  --color-accent-ink: oklch(99% 0.002 255);
+  --color-accent: #293740;
+  --color-accent-hover: #3b505d;
+  --color-accent-ink: #e9edef;
   --color-focus: oklch(48% 0.135 255);
   --color-error: oklch(48% 0.16 25);
   --color-success: oklch(43% 0.11 155);
