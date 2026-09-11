@@ -34,18 +34,25 @@ a {
 
 .page {
   min-height: 100svh;
-  padding: var(--space-md);
+  padding: 32px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #e4e4f2;
+  background-image: repeating-linear-gradient(to right, transparent 0, transparent 1.6666666666666667px, #e4e4f2 1.6666666666666667px, #e4e4f2 5px, transparent 5px, transparent 6.666666666666667px), repeating-linear-gradient(to bottom, transparent 0, transparent 1.6666666666666667px, #e4e4f2 1.6666666666666667px, #e4e4f2 5px, transparent 5px, transparent 6.666666666666667px), linear-gradient(to bottom, #d4d4e4 0.6px, transparent 0.6px), linear-gradient(to right, #d4d4e4 0.6px, transparent 0.6px);
+  background-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px;
+  background-position: 0 0, 0 0, 0 -0.2px, -0.2px 0;
 }
 
 .sheet {
-  width: 100%;
-  min-height: calc(100svh - var(--space-lg));
   margin-inline: auto;
-  padding: clamp(var(--space-lg), 5vw, var(--space-2xl));
-  border: var(--rule-thin) solid var(--color-ink);
+  padding: 8px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
   display: grid;
   grid-template-rows: 1fr auto;
-  gap: var(--space-lg);
+  gap: 64px;
 }
 
 .footer a {
@@ -58,12 +65,18 @@ a {
   min-width: 0;
   display: grid;
   gap: clamp(var(--space-lg), 10vw, var(--space-xl));
-  align-items: center;
+  align-items: flex-start;
 }
 
 .hero,
 .playground {
   min-width: 0;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .wordmark {
@@ -113,7 +126,6 @@ a {
 
 .playground {
   padding: var(--space-lg) 0 var(--space-md);
-  border-bottom: var(--rule-thin) solid var(--color-rule);
 }
 
 .playground h2 {
@@ -123,9 +135,10 @@ a {
 
 .instruction {
   margin: var(--space-xs) 0 var(--space-sm);
-  color: var(--color-ink-soft);
-  font-size: var(--text-base);
+  color: var(--color-muted);
+  font-size: var(--text-sm);
   line-height: 1.5;
+  font-style: italic;
 }
 
 /* Command bar */
@@ -225,6 +238,7 @@ a:focus-visible {
   color: var(--color-muted);
   font-size: var(--text-sm);
   line-height: 1.5;
+  font-style: italic;
 }
 
 .try strong {
@@ -236,6 +250,7 @@ a:focus-visible {
 .try__prompt {
   display: inline-flex;
   align-items: center;
+  font-style: normal;
   gap: 0.35em;
   cursor: pointer;
   font: inherit;
@@ -440,11 +455,15 @@ a:focus-visible {
 @media (min-width: 46rem) {
   .page {
     padding: var(--space-sm);
+    align-items: center;
   }
 
   .sheet {
-    min-height: calc(100svh - var(--space-lg));
-    gap: clamp(var(--space-xl), 7vh, var(--space-3xl));
+    padding: 64px;
+    border: var(--rule-thin) solid var(--color-ink);
+    border-radius: 12px;
+    background: var(--color-paper-raised);
+    gap: 0;
   }
 
   .composition {
@@ -468,11 +487,11 @@ a:focus-visible {
   }
 
   .sheet {
-    height: calc(100svh - var(--space-lg));
     min-height: 0;
   }
 
   .composition {
+    align-items: flex-start;
     gap: clamp(var(--space-xl), 7vw, var(--space-3xl));
   }
 }

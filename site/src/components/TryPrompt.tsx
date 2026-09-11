@@ -6,7 +6,7 @@ export function TryPrompt() {
 
   return (
     <p className="try">
-      <span>Start agenten på nytt, og skriv:</span>
+      <span>2. Start agenten på nytt, og skriv:</span>
       <button
         className="try__prompt"
         type="button"
@@ -14,9 +14,9 @@ export function TryPrompt() {
         data-state={state}
         onClick={copy}
       >
-        <span className="try-idle">Bruk Språkvask til å forbedre denne teksten</span>
+        <span className="try-idle">«Bruk Språkvask til å forbedre teksten»</span>
         <span className="try-done">
-          Bruk Språkvask til å forbedre denne teksten
+          «Bruk Språkvask til å forbedre teksten»
           <Check size={14} weight="bold" style={{ marginLeft: '0.35em' }} />
         </span>
       </button>

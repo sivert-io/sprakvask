@@ -6,7 +6,7 @@ export function usePromptClipboard() {
 
   const copy = useCallback(async () => {
     if (timerRef.current) clearTimeout(timerRef.current);
-    const text = 'Bruk Språkvask til å forbedre denne teksten';
+    const text = 'Bruk Språkvask til å forbedre teksten';
 
     try {
       await navigator.clipboard.writeText(text);

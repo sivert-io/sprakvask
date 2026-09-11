@@ -35,7 +35,7 @@
 }
 
 :root {
-  --color-paper: oklch(97% 0.004 255);
+  --color-paper: oklch(95% 0.004 255);
   --color-paper-raised: oklch(99% 0.002 255);
   --color-ink: oklch(23% 0.018 305);
   --color-ink-soft: oklch(40% 0.018 305);
