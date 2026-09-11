@@ -361,7 +361,7 @@
 
       .facts strong {
         display: block;
-        font: 400 var(--text-lg)/1 var(--font-display);
+        font: 400 var(--text-lg)/1 var(--font-mono);
         font-variant-numeric: tabular-nums;
       }
 
@@ -398,6 +398,13 @@
         display: inline-flex;
         align-items: center;
         min-height: 44px;
+        gap: 0.25em;
+      }
+
+      .footer__links a img {
+        width: 1em;
+        height: 1em;
+        flex-shrink: 0;
       }
 
       .sr-only {
@@ -607,8 +614,14 @@
             tilknyttet Språkrådet. MIT-lisens.
           </p>
           <nav class="footer__links" aria-label="Prosjektlenker">
-            <a href="https://github.com/sivert-io/sprakvask">Kildekode</a>
-            <a href="https://www.npmjs.com/package/sprakvask">npm</a>
+            <a href="https://github.com/sivert-io/sprakvask" target="_blank" rel="noopener noreferrer">
+              <img src="/assets/arrow-square-out.svg" aria-hidden="true" />
+              Kildekode
+            </a>
+            <a href="https://www.npmjs.com/package/sprakvask" target="_blank" rel="noopener noreferrer">
+              <img src="/assets/arrow-square-out.svg" aria-hidden="true" />
+              npm
+            </a>
           </nav>
         </footer>
       </article>
