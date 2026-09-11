@@ -2,10 +2,10 @@ FROM node:22-alpine AS build
 
 WORKDIR /app
 
-COPY package.json package-lock.json* ./
+COPY site/package.json site/package-lock.json* ./
 RUN npm ci
 
-COPY . .
+COPY site/ .
 RUN npx vite build
 
 FROM nginx:1.29-alpine
