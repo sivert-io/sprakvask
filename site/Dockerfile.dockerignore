@@ -8,6 +8,7 @@
 !site/sitemap.xml
 !site/fonts/
 !site/fonts/*.woff2
+!site/fonts/*.ttf
 !assets/
 !assets/icon.svg
 !assets/banner.png
