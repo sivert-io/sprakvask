@@ -1,9 +1,18 @@
+FROM node:22-alpine AS build
+
+WORKDIR /app
+
+COPY package.json package-lock.json* ./
+RUN npm ci
+
+COPY . .
+RUN npx vite build
+
 FROM nginx:1.29-alpine
 
 COPY site/nginx.conf /etc/nginx/conf.d/default.conf
-COPY site/index.html site/tokens.css site/robots.txt site/sitemap.xml /usr/share/nginx/html/
-COPY site/fonts /usr/share/nginx/html/fonts
-COPY site/assets /usr/share/nginx/html/assets/
+COPY --from=build /app/dist /usr/share/nginx/html
+COPY site/robots.txt site/sitemap.xml /usr/share/nginx/html/
 
 EXPOSE 8080
 
