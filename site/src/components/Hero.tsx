@@ -1,3 +1,5 @@
+import { Robot } from 'phosphor-react';
+
 export function Hero() {
   return (
     <section className="hero">
