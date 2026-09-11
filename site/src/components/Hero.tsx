@@ -6,7 +6,7 @@ export function Hero() {
       <h1 id="title" className="wordmark" data-wordmark="Språkvask">
         Språkvask
       </h1>
-      <p className="tagline"><strong>Norsk grammatikk</strong> for kodeagenter <Robot weight="fill" size={16} /></p>
+      <p className="tagline"><strong>Norsk grammatikk</strong> for kodeagenter <Robot weight="regular" emSize={1.15} /></p>
     </section>
   );
 }
