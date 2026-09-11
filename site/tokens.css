@@ -4,7 +4,7 @@
  */
 @font-face {
   font-family: "Fraunces";
-  src: url("/fonts/Fraunces.ttf") format("truetype");
+  src: url("/fonts/Fraunces.woff2") format("woff2");
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: "Fraunces";
-  src: url("/fonts/Fraunces-Italic.ttf") format("truetype");
+  src: url("/fonts/Fraunces-Italic.woff2") format("woff2");
   font-style: italic;
   font-weight: 100 900;
   font-display: swap;
@@ -28,7 +28,7 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("/fonts/dm-sans/DMSans-Regular.ttf") format("truetype");
+  src: url("/fonts/DMSans-Regular.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -36,7 +36,7 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("/fonts/dm-sans/DMSans-Regular-Italic.ttf") format("truetype");
+  src: url("/fonts/DMSans-Regular-Italic.woff2") format("woff2");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -44,7 +44,7 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("/fonts/dm-sans/DMSans-Medium.ttf") format("truetype");
+  src: url("/fonts/DMSans-Medium.woff2") format("woff2");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -52,7 +52,7 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("/fonts/dm-sans/DMSans-Medium-Italic.ttf") format("truetype");
+  src: url("/fonts/DMSans-Medium-Italic.woff2") format("woff2");
   font-style: italic;
   font-weight: 500;
   font-display: swap;
@@ -60,7 +60,7 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("/fonts/dm-sans/DMSans-SemiBold.ttf") format("truetype");
+  src: url("/fonts/DMSans-SemiBold.woff2") format("woff2");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -68,7 +68,7 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("/fonts/dm-sans/DMSans-Bold.ttf") format("truetype");
+  src: url("/fonts/DMSans-Bold.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -76,7 +76,7 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("/fonts/dm-sans/DMSans-Bold-Italic.ttf") format("truetype");
+  src: url("/fonts/DMSans-Bold-Italic.woff2") format("woff2");
   font-style: italic;
   font-weight: 700;
   font-display: swap;
