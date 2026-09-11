@@ -4,6 +4,7 @@ services:
     build:
       context: ..
       dockerfile: site/Dockerfile
+    pull_policy: build
     container_name: sprakvask-site
     restart: unless-stopped
     ports:
