@@ -1,0 +1,14 @@
+**
+!site/
+!site/Dockerfile
+!site/nginx.conf
+!site/index.html
+!site/tokens.css
+!site/robots.txt
+!site/sitemap.xml
+!site/fonts/
+!site/fonts/*.woff2
+!assets/
+!assets/icon.svg
+!assets/banner.png
+!assets/og-image.png

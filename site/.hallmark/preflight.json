@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-10",
+  "project": "sprakvask.no (site/ in the sprakvask repo)",
+  "fonts": {
+    "display": "Fraunces",
+    "body": "Spectral",
+    "mono": "JetBrains Mono",
+    "source": "assets/README.md L9-11, L28-30 (brand doc; no web font loading yet)"
+  },
+  "palette": {
+    "blekk": "#141119",
+    "blekk_lysere": "#1A171F",
+    "papir": "#D9D9D9",
+    "bolge": "#96AED3",
+    "bolge_lys": "#8FB0DA",
+    "dempet": "#7A7285",
+    "source": "assets/README.md L37-42"
+  },
+  "logo": "assets/logo.svg + logo-light.svg: outlined wordmark, wave masked through the letters",
+  "motion": "none (no motion library; root package.json has no dependencies)",
+  "spacing": "none",
+  "framework": "none in repo (npm CLI package). Precedent on edition35: gullberg.no = Vite + React 19 + Tailwind v4 + three.js, nginx in Docker behind cloudflared",
+  "preserve": ["brand fonts", "brand palette", "logo and its wave-through-the-letters idea"]
+}
