@@ -7,7 +7,7 @@ services:
     container_name: sprakvask-site
     restart: unless-stopped
     ports:
-      - "${SPRAKVASK_BIND:-127.0.0.1}:${SPRAKVASK_PORT:-3544}:8080"
+      - "${SPRAKVASK_BIND:-0.0.0.0}:${SPRAKVASK_PORT:-3544}:8080"
     security_opt:
       - no-new-privileges:true
     logging:
