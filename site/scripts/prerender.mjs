@@ -1,6 +1,7 @@
 // Renders the page to HTML at build time and writes it into dist/index.html.
 // Visitors and search engines get real text on the first response; the client
 // bundle only hydrates the copy buttons.
+import { createHash } from 'node:crypto';
 import { readFile, rm, writeFile } from 'node:fs/promises';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import path from 'node:path';
@@ -22,7 +23,16 @@ const cssLink = html.match(/<link rel="stylesheet"[^>]*href="(\/assets\/[^"]+\.c
 if (!cssLink) throw new Error('Fant ikke stilarket i dist/index.html.');
 const css = await readFile(path.join(root, 'dist', cssLink[1]), 'utf8');
 
+// Brand files in /assets/ keep their names, so Cloudflare and browsers cache
+// them by URL. A content hash in the query makes a changed icon a new URL.
+async function versioned(url) {
+  const bytes = await readFile(path.join(root, 'dist', url));
+  return `${url}?v=${createHash('sha256').update(bytes).digest('hex').slice(0, 8)}`;
+}
+const icon = '/assets/icon.svg';
+
 const output = html
+  .replace(`href="${icon}"`, `href="${await versioned(icon)}"`)
   .replace(cssLink[0], () => `<style>${css}</style>`)
   .replace(marker, () => `<div id="root">${render()}</div>`);
 

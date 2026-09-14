@@ -13,7 +13,8 @@
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
     <link rel="canonical" href="https://sprakvask.no/" />
-    <link rel="icon" href="/assets/icon.svg?v=2" type="image/svg+xml" />
+    <!-- scripts/prerender.mjs adds ?v=<content hash>, so caches pick up a new icon. -->
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml" />
     <!-- Only the wordmark font is preloaded: it is the largest thing on screen. -->
     <link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin />
     <meta name="theme-color" content="#c6cdd1" />
