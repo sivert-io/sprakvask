@@ -132,6 +132,137 @@ ligger i `references/` og lastes bare ved tvil:
 | Anglisisme    | `når det kommer til`            | `når det gjelder`            |
 | KI-preg       | `Det er verdt å merke seg at …` | stryk, begynn med poenget    |
 
+## Eksempler
+
+Typiske tekster fra kodeagenter, før og etter språkvask. Trykk for å se.
+
+<details>
+<summary><strong>Feilmelding i et skjema</strong></summary>
+
+```diff
+- Vennligst fyll ut alle påkrevde felter. En feil oppstod — prøv igjen senere.
++ Fyll ut navn og e-post. Vi fikk ikke lagret påmeldingen, så prøv en gang til.
+```
+
+- `Vennligst` er engelsk `please` og virker stivt. Høfligheten ligger i setningen.
+- `En feil oppstod` sier ikke hva som gikk galt eller hva leseren skal gjøre.
+- Em-streken (`—`) finnes ikke i norsk.
+
+</details>
+
+<details>
+<summary><strong>Knapper og overskrifter</strong></summary>
+
+```diff
+- Meld Deg På Nå
+- Lagre Dine Innstillinger
++ Meld deg på nå
++ Lagre innstillingene
+```
+
+- Norsk har stor forbokstav bare i første ord og i egennavn.
+- Eiendomsordet står etter substantivet: `innstillingene dine`. På en knapp holder det med `innstillingene`.
+
+</details>
+
+<details>
+<summary><strong>E-post</strong></summary>
+
+```diff
+- Hei Kari,
+-
+- Takk for å melde deg på! Arrangementet vil finne sted Lørdag 16/10 kl 18:00-23:00.
+-
+- Mvh,
+- Ola Nordmann
+- Daglig Leder
++ Hei, Kari
++
++ Takk for at du meldte deg på! Vi ses lørdag 16. oktober kl. 18.00–23.00.
++
++ Vennlig hilsen
++ Ola Nordmann
++ daglig leder
+```
+
+- Komma står foran navnet i hilsenen, ikke etter.
+- `Takk for å melde deg på` og `vil finne sted` er oversatt engelsk.
+- Ukedager, måneder og titler har liten forbokstav.
+- Datoer har punktum, ikke skråstrek. Tidsrom har tankestrek uten mellomrom.
+- Avslutningen har ingen komma, og `Mvh.` frarådes i formelle e-poster.
+
+</details>
+
+<details>
+<summary><strong>Priser, tall og frister</strong></summary>
+
+```diff
+- Billetten koster kr. 1,250.50 og må betales innen 1. oktober. 25% rabatt for medlemmer.
++ Billetten koster 1 250,50 kroner. Betal seinest 1. oktober. Medlemmer får 25 % rabatt.
+```
+
+- Tusenskille er mellomrom og desimalskille er komma. `kr` har ikke punktum.
+- `innen 1. oktober` er tvetydig: mange leser det som «før 1. oktober».
+- Prosenttegnet har mellomrom foran.
+
+</details>
+
+<details>
+<summary><strong>Komma</strong></summary>
+
+```diff
+- For å fortsette, må du logge inn. Deltakere, som ikke har betalt mister plassen.
++ For å fortsette må du logge inn. Deltakere som ikke har betalt, mister plassen.
+```
+
+- Ikke komma etter et innledende uttrykk uten eget verb.
+- En nødvendig relativsetning får komma etter, men ikke foran.
+
+</details>
+
+<details>
+<summary><strong>README skrevet av en språkmodell</strong></summary>
+
+```diff
+- Det er verdt å merke seg at dette verktøyet tilbyr en sømløs og robust løsning
+- som adresserer behovet for effektiv håndtering av data. Når det kommer til
+- ytelse, spiller caching en avgjørende rolle.
++ Verktøyet leser CSV-filer og lagrer dem i PostgreSQL. Resultatene caches, så
++ samme spørring tar under et millisekund neste gang.
+```
+
+- Tomme innledninger og oppblåste ord (`sømløs`, `robust`, `avgjørende rolle`) sier ingenting konkret.
+- `adressere et problem` og `når det kommer til` er oversatt engelsk.
+- Etablerte fagord som `caches` står i tekst til utviklere.
+
+</details>
+
+<details>
+<summary><strong>Særskriving og apostrof</strong></summary>
+
+```diff
+- Skriv inn bruker navn og passord for å se Sivert's påmeldings skjema.
++ Skriv inn brukernavn og passord for å se påmeldingsskjemaet til Sivert.
+```
+
+- Sammensatte ord skrives i ett ord.
+- Eiendomsform har ikke apostrof: `Siverts`. Ofte leses `skjemaet til Sivert` lettere.
+
+</details>
+
+<details>
+<summary><strong>Nynorsk</strong></summary>
+
+```diff
+- Søknaden behandlast i mai. Ta kontakt hvis det finnast feil i opplysningane.
++ Søknaden blir behandla i mai. Ta kontakt dersom det finst feil i opplysningane.
+```
+
+- Nynorsk har ikke s-passiv i presens: `blir behandla`, ikke `behandlast`.
+- `hvis` finnes ikke i nynorsk. `det finst` er riktig presens av `finnast`.
+
+</details>
+
 ## Kilder og forbehold
 
 Normene er hentet fra [Språkrådet](https://sprakradet.no) – veiledningssidene
