@@ -93,7 +93,7 @@
   --ease-in: cubic-bezier(.32, 0, .67, 0);
   --ease-in-out: cubic-bezier(.65, 0, .35, 1);
   --dur-short: 140ms;
-  --dur-settle: 600ms;
+  --dur-arrive: 1000ms;
   --dur-water: 9s;
   --rule-thin: 1px;
   --radius-control: 0;

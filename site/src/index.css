@@ -53,13 +53,18 @@ a {
   gap: 64px;
 }
 
-/* The sheet is readable from the first paint; it only settles a few pixels into place. */
+/* ── Arrival ──────────────────────────────────────────────────────────────
+   The whole card, water included, arrives as one piece: it fades in and
+   scales up into place. After that, nothing moves but the water. */
 .sheet {
-  animation: sheet-settle var(--dur-settle) var(--ease-out) both;
+  animation: sheet-arrive var(--dur-arrive) var(--ease-out) both;
 }
 
-@keyframes sheet-settle {
-  from { transform: translateY(var(--space-sm)); }
+@keyframes sheet-arrive {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
 }
 
 .footer a {
@@ -125,7 +130,7 @@ a {
 }
 
 @keyframes wordmark-water {
-  to { background-position: -2.4em 0, 4.2em 0, -3em 0; }
+  to { background-position-x: -2.4em, 4.2em, -3em; }
 }
 
 .tagline__icon {
