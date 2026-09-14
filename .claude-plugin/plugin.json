@@ -1,6 +1,6 @@
 {
   "name": "sprakvask",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Norsk språkvask etter Språkrådets normer – rettskriving, tegnsetting og klarspråk, og feilene som oppstår når norsk skrives med engelsk tankegang bak.",
   "author": { "name": "sivert-io" },
   "homepage": "https://github.com/sivert-io/sprakvask",
