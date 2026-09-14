@@ -2,18 +2,18 @@
  * Hvor de ulike agentene leter etter regler.
  *
  * Det finnes ingen felles standard. `SKILL.md` under `.claude/skills/` er
- * Claude Codes, og alle de andre fant på sitt eget – som regel én markdown-fil
+ * Claude Codes, og hver av de andre har sin egen – som regel én markdown-fil
  * på en avtalt sti. Innholdet er den samme prosaen uansett; det er bare stien
  * og frontmatteren som skiller.
  *
- * `AGENTS.md` er det nærmeste noe felles: flere leverandører har blitt enige om
- * den, og den er derfor den første som installeres når ingenting annet er
+ * `AGENTS.md` er det nærmeste vi har en felles standard: flere leverandører har
+ * blitt enige om den, og derfor installeres den først når ingenting annet er
  * oppdaget.
  *
  * Filene som er *delte* – AGENTS.md, copilot-instructions.md, .rules,
  * CONVENTIONS.md – tilhører brukeren og kan ha innhold fra før. Der skrives det
  * inn et avmerket avsnitt som kan oppdateres og fjernes igjen uten å røre
- * resten. Å overskrive en fil noen andre eier er den ene feilen et
+ * resten. Å overskrive en fil noen andre eier, er den ene feilen et
  * installasjonsskript ikke får lov til å gjøre.
  */
 export const START = "<!-- sprakvask:start -->";
@@ -31,7 +31,7 @@ export const TARGETS = [
   },
   {
     id: "agents",
-    name: "AGENTS.md (Codex, Jules, Factory, Amp m.fl.)",
+    name: "AGENTS.md (Codex, Jules, Factory, Amp mfl.)",
     kind: "section",
     path: "AGENTS.md",
     detect: ["AGENTS.md"],

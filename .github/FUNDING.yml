@@ -1,7 +1,7 @@
 # Sponsorlenkene for dette repoet.
 #
-# Ligger her og ikke bare i standardene fra `sivert-io/.github`, slik at knappen
-# er der uavhengig av om arven virker – og slik at den som kloner repoet ser
-# hvor den peker uten å måtte lete et annet sted.
+# Filen ligger her og ikke bare i standardene fra `sivert-io/.github`, slik at
+# knappen er der uavhengig av om arven virker – og slik at den som kloner
+# repoet, ser hvor den peker uten å måtte lete et annet sted.
 github: sivert-io
 ko_fi: sivert

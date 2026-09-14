@@ -18,7 +18,7 @@
 
 Norsk tekst som ser ut som den er skrevet av en som kan norsk.
 
-Språkvask er et sett med norske språkregler for kodeagenter. Det koder
+Språkvask er et sett med norske språkregler for kodeagenter. Det bygger på
 **Språkrådets** normer for rettskriving, tegnsetting og klarspråk, og legger
 til det normene ikke dekker: hva som avslører at en norsk tekst er tenkt på
 engelsk.
@@ -46,8 +46,8 @@ engelsk ordstilling, og em-streken finnes ikke i norsk.
 npx sprakvask
 ```
 
-Den finner ut hvilke agenter prosjektet allerede bruker og skriver reglene dit
-de leter. Er det ingen å gå etter, lander de i `AGENTS.md`.
+Den finner ut hvilke agenter prosjektet allerede bruker. Så skriver den reglene
+dit de agentene leter. Er det ingen å gå etter, lander de i `AGENTS.md`.
 
 ```bash
 npx sprakvask --all       # alle støttede
@@ -79,7 +79,7 @@ resten.
 
 Filene flere deler på – `AGENTS.md`, `copilot-instructions.md`, `.rules`,
 `CONVENTIONS.md` – tilhører deg. Der skrives det inn et avmerket avsnitt som
-kan oppdateres og fjernes igjen uten at noe annet i fila røres.
+kan oppdateres og fjernes igjen uten at noe annet i filen røres.
 
 Som plugin i Claude Code, hvis du heller vil ha den slik:
 
@@ -110,7 +110,7 @@ ligger i `references/` og lastes bare ved tvil:
 | `ki-markorer.md`           | Oppblåste ord, tomme fraser og mønstre som avslører KI-tekst                   |
 | `teksttyper.md`            | Grensesnitt, dokumentasjon, README, commit, PR, versjonsmerknader, fagspråk    |
 | `ord-om-mennesker.md`      | Kjønn, hudfarge, alder – ord som kan såre                                      |
-| `nynorsk.md`               | Konsekvent nynorsk, passiv, vanlige feil, ordval                               |
+| `nynorsk.md`               | Konsekvent nynorsk, passiv, vanlige feil, ordvalg                              |
 
 ## De vanligste feilene
 

@@ -2,9 +2,9 @@
 /**
  * Legger reglene der agenten din leter etter dem.
  *
- * Uten argumenter ser den etter hvilke agenter prosjektet allerede bruker og
- * skriver til dem. Finner den ingen, faller den tilbake på `AGENTS.md`, som er
- * det nærmeste noe felles standard.
+ * Uten argumenter finner den ut hvilke agenter prosjektet allerede bruker. Så
+ * skriver den til dem. Finner den ingen, faller den tilbake på `AGENTS.md`, som er
+ * det nærmeste vi har en felles standard.
  *
  * Kopierer framfor å lenke. En symlink inn i `node_modules` peker ingen steder
  * den dagen noen kjører `npm ci`, og da forsvinner reglene uten et ord.
@@ -49,7 +49,7 @@ if (flags.has("--list")) {
 /*
   Sjekkene, klippet ut av selve ferdigheten.
 
-  Agentene som leser én fil får ikke referansemappen, så de får kjernen – men
+  Agentene som leser én fil, får ikke referansemappen, så de får kjernen – men
   den hentes herfra i stedet for å skrives av. To kopier av de samme reglene er
   to steder å rette den samme feilen, og den ene ville blitt glemt.
 
@@ -177,6 +177,6 @@ if (done.length === 0) {
 } else {
   console.log(`  Språkvask ${version} ${removing ? "fjernet fra" : "lagt inn for"}:`);
   for (const t of done) console.log(`    ${t.name.padEnd(42)} ${t.path}`);
-  if (!removing) console.log("\n  Start agenten på nytt, så plukker den det opp.");
+  if (!removing) console.log("\n  Start agenten på nytt, så leser den reglene.");
 }
 console.log();

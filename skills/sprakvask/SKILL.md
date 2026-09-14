@@ -240,4 +240,4 @@ Last dem én av gangen, og bare når du trenger dem.
 | [ki-markorer.md](references/ki-markorer.md) | Oppblåste ord, tomme fraser og mønstre som avslører KI-tekst |
 | [teksttyper.md](references/teksttyper.md) | Grensesnitt, dokumentasjon, README, commit, PR, versjonsmerknader, fagspråk |
 | [ord-om-mennesker.md](references/ord-om-mennesker.md) | Kjønn, hudfarge, alder – ord som kan såre |
-| [nynorsk.md](references/nynorsk.md) | Konsekvent nynorsk, passiv, vanlige feil, ordval |
+| [nynorsk.md](references/nynorsk.md) | Konsekvent nynorsk, passiv, vanlige feil, ordvalg |

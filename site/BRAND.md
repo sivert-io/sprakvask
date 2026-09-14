@@ -49,8 +49,8 @@ grunnlaget, men prosjektet er ikke utgitt av eller tilknyttet Språkrådet.
 ## Generering
 
 Kjør `python3 scripts/generate-brand.py` fra prosjektmappen for å lage SVG-filene
-med fontTools og HarfBuzz (`hb-shape`). Kjør deretter `node scripts/render-brand.cjs` med sharp tilgjengelig
-for å lage PNG-filene. Begge skriptene skriver direkte til `site/public/assets`,
+med fontTools og HarfBuzz (`hb-shape`). Kjør deretter `node scripts/render-brand.cjs`
+for å lage PNG-filene. Det skriptet krever sharp. Begge skriptene skriver direkte til `site/public/assets`,
 som er den eneste kilden til merkefilene. README-en bruker de samme filene.
 Vite kopierer dem til `site/dist` under bygging. Byggemappen er generert og skal
 ikke sjekkes inn i Git.
