@@ -7,6 +7,8 @@
 !site/vite.config.ts
 !site/index.html
 !site/nginx.conf
+!site/scripts/
+!site/scripts/**
 !site/src/
 !site/src/**
 !site/public/

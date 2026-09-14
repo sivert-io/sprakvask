@@ -4,9 +4,10 @@
  */
 @font-face {
   font-family: "Fraunces";
-  src: url("/fonts/Fraunces.ttf") format("truetype");
+  /* Weight 400 instance with the optical-size axis kept, Latin subset. */
+  src: url("/fonts/fraunces.woff2") format("woff2");
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: 400;
   font-display: swap;
 }
 
@@ -20,7 +21,7 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("/fonts/dm-sans/DMSans-Regular.ttf") format("truetype");
+  src: url("/fonts/dm-sans-regular.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -28,7 +29,7 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("/fonts/dm-sans/DMSans-Regular-Italic.ttf") format("truetype");
+  src: url("/fonts/dm-sans-italic.woff2") format("woff2");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -36,16 +37,8 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("/fonts/dm-sans/DMSans-Bold.ttf") format("truetype");
+  src: url("/fonts/dm-sans-bold.woff2") format("woff2");
   font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "DM Sans";
-  src: url("/fonts/dm-sans/DMSans-Bold-Italic.ttf") format("truetype");
-  font-style: italic;
   font-weight: 700;
   font-display: swap;
 }
@@ -61,6 +54,10 @@
   --color-rule: #a6b3ba;
   --color-wave: oklch(59% 0.088 255);
   --color-wave-light: oklch(82% 0.047 250);
+  /* Water layers in the wordmark, top to bottom. Colours match the brand exports. */
+  --wave-back: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 100' preserveAspectRatio='none'%3E%3Cpath fill='%23597fb1' d='M0 46Q50 41 100 46T200 46T300 46T400 46V100H0Z'/%3E%3C/svg%3E");
+  --wave-middle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 100' preserveAspectRatio='none'%3E%3Cpath fill='%236d8fb9' d='M0 52Q50 48 100 52T200 52T300 52T400 52V100H0Z'/%3E%3C/svg%3E");
+  --wave-front: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 100' preserveAspectRatio='none'%3E%3Cpath fill='%23aec7e2' d='M0 57Q50 54 100 57T200 57T300 57T400 57V100H0Z'/%3E%3C/svg%3E");
   --color-accent: #293740;
   --color-accent-hover: #3b505d;
   --color-accent-ink: #e9edef;
@@ -96,7 +93,8 @@
   --ease-in: cubic-bezier(.32, 0, .67, 0);
   --ease-in-out: cubic-bezier(.65, 0, .35, 1);
   --dur-short: 140ms;
-  --dur-wash: 1700ms;
+  --dur-settle: 600ms;
+  --dur-water: 9s;
   --rule-thin: 1px;
   --radius-control: 0;
 }

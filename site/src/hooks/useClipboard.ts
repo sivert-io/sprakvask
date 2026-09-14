@@ -1,22 +1,35 @@
-import { useState, useCallback, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
-export function useClipboard(text: string, onStatus?: (msg: string) => void) {
-  const [state, setState] = useState<string>();
-  const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+export type CopyState = 'copied' | 'failed' | undefined;
+
+/** Tells screen readers what happened. The live region is in index.html. */
+function announce(message: string) {
+  const region = document.getElementById('copy-status');
+  if (region) region.textContent = message;
+}
+
+/**
+ * Copies `text`. If the browser refuses, it selects `fallback` instead so the
+ * visitor can copy it themselves.
+ */
+export function useClipboard(text: string, fallback: React.RefObject<HTMLElement | null>) {
+  const [state, setState] = useState<CopyState>();
+  const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  useEffect(() => () => clearTimeout(timer.current), []);
 
   const copy = useCallback(async () => {
-    if (timerRef.current) clearTimeout(timerRef.current);
-    setState('loading');
+    clearTimeout(timer.current);
 
     let copied = false;
     try {
       await navigator.clipboard.writeText(text);
       copied = true;
     } catch {
-      const range = document.createRange();
-      const el = document.querySelector('[data-command]') as Node;
-      if (el) {
-        range.selectNodeContents(el);
+      const node = fallback.current;
+      if (node) {
+        const range = document.createRange();
+        range.selectNodeContents(node);
         const selection = window.getSelection();
         selection?.removeAllRanges();
         selection?.addRange(range);
@@ -24,9 +37,9 @@ export function useClipboard(text: string, onStatus?: (msg: string) => void) {
     }
 
     setState(copied ? 'copied' : 'failed');
-    onStatus?.(copied ? 'Kopiert: npx sprakvask' : 'Kunne ikke kopiere. Kommandoen er merket.');
-    timerRef.current = setTimeout(() => setState(undefined), 2400);
-  }, [text, onStatus]);
+    announce(copied ? `Kopiert: ${text}` : 'Kunne ikke kopiere. Teksten er merket, så du kan kopiere den selv.');
+    timer.current = setTimeout(() => setState(undefined), 2400);
+  }, [text, fallback]);
 
   return { state, copy };
 }

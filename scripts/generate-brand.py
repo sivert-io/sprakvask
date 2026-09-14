@@ -1,4 +1,4 @@
-"""Generate portable brand SVGs from the React site's local fonts (requires fontTools, hb-shape and the site Node dependencies)."""
+"""Generate portable brand SVGs from the full source fonts in site/brand/fonts (requires fontTools and hb-shape)."""
 from pathlib import Path
 from fontTools.ttLib import TTFont
 from fontTools.varLib.instancer import instantiateVariableFont
@@ -8,7 +8,8 @@ import subprocess
 import json
 
 ROOT = Path(__file__).resolve().parents[1]
-FONTS = ROOT / 'site/public/fonts'
+# Full, unsubsetted fonts. The site serves small woff2 subsets instead.
+FONTS = ROOT / 'site/brand/fonts'
 
 def outlines(text, filename, size, tracking=0, optical=None):
     font = TTFont(FONTS / filename)
@@ -53,15 +54,13 @@ s, sw = outlines('S','Fraunces.ttf',88, optical=84)
 (out/'icon.svg').write_text(svg(128,128,f'<rect width="128" height="128" rx="24" fill="{light}"/><g transform="translate({(128-sw)/2} 12)">{mark(s,sw,101,ink)}</g>'))
 bold, bw = outlines('Norsk grammatikk ', 'dm-sans/DMSans-Bold.ttf', 32)
 regular, rw = outlines('for kodeagenter ', 'dm-sans/DMSans-Regular.ttf', 32)
-# Render the actual Phosphor component used by Hero.tsx.
-robot = subprocess.check_output(['node', '-e', f"""
-const React = require('./site/node_modules/react');
-const {{ renderToStaticMarkup }} = require('./site/node_modules/react-dom/server');
-const {{ Robot }} = require('./site/node_modules/phosphor-react');
-process.stdout.write(renderToStaticMarkup(React.createElement(Robot, {{
-  weight: 'regular', size: 32, color: '{ink}'
-}})));
-"""], cwd=ROOT, text=True).strip()
+# Phosphor Robot, regular weight – the same geometry as RobotIcon in site/src/components/icons.tsx.
+robot = (f'<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" fill="none" '
+         f'stroke="{ink}" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">'
+         '<rect x="32" y="56" width="192" height="160" rx="24"/><rect x="72" y="144" width="112" height="40" rx="20"/>'
+         '<line x1="148" y1="144" x2="148" y2="184"/><line x1="108" y1="144" x2="108" y2="184"/>'
+         '<line x1="128" y1="56" x2="128" y2="16"/>'
+         f'<circle cx="84" cy="108" r="12" fill="{ink}" stroke="none"/><circle cx="172" cy="108" r="12" fill="{ink}" stroke="none"/></svg>')
 tw = bw + rw + 32
 subtitle = f'<path d="{bold}"/><path transform="translate({bw} 0)" d="{regular}"/><g transform="translate({bw+rw} 8)">{robot}</g>'
 scale = 960/width

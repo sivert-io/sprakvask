@@ -43,8 +43,6 @@ a {
 }
 
 .sheet {
-  opacity: 0;
-  transform-origin: center center;
   margin-inline: auto;
   padding: 8px;
   border: none;
@@ -55,28 +53,13 @@ a {
   gap: 64px;
 }
 
-.sheet[data-ready="true"] {
-  opacity: 1;
-  animation: sheet-arrive 800ms 120ms both;
+/* The sheet is readable from the first paint; it only settles a few pixels into place. */
+.sheet {
+  animation: sheet-settle var(--dur-settle) var(--ease-out) both;
 }
 
-@keyframes sheet-arrive {
-  0% {
-    opacity: 0;
-    transform: translateY(72px) scale(0.96);
-    animation-timing-function: cubic-bezier(0.2, 0.65, 0.4, 1);
-  }
-
-  55% {
-    opacity: 1;
-    transform: translateY(-28px) scale(1);
-    animation-timing-function: cubic-bezier(0.45, 0, 0.65, 1);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
+@keyframes sheet-settle {
+  from { transform: translateY(var(--space-sm)); }
 }
 
 .footer a {
@@ -120,18 +103,34 @@ a {
   position: relative;
 }
 
-.wordmark__wave-text {
+/* Water inside the letters: three tiled SVG waves clipped to the glyphs.
+   Each layer moves exactly one tile width per cycle, so the loop is seamless
+   and no JavaScript runs per frame. */
+.wordmark__wave {
   position: absolute;
+  top: 0;
+  left: 0;
   /* Include Fraunces descenders and the final letter’s overhanging serif. */
-  inset: 0 -0.15em -0.25em 0;
+  padding: 0 0.15em 0.25em 0;
   color: transparent;
   z-index: 1;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  background-image: var(--wave-front), var(--wave-middle), var(--wave-back);
+  background-size: 2.4em 100%, 4.2em 100%, 3em 100%;
+  background-repeat: repeat-x;
   background-clip: text;
   -webkit-background-clip: text;
+  animation: wordmark-water var(--dur-water) linear infinite;
   pointer-events: none;
   user-select: none;
+}
+
+@keyframes wordmark-water {
+  to { background-position: -2.4em 0, 4.2em 0, -3em 0; }
+}
+
+.tagline__icon {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .tagline {
@@ -220,10 +219,6 @@ a:focus-visible {
   cursor: not-allowed;
 }
 
-.command__copy[data-state="loading"] {
-  cursor: wait;
-}
-
 .command__copy[data-state="failed"] {
   background: var(--color-error);
 }
@@ -232,19 +227,16 @@ a:focus-visible {
   background: var(--color-success);
 }
 
-.copy-loading,
 .copy-done,
 .copy-fail {
   display: none;
 }
 
-.command__copy[data-state="loading"] .copy-idle,
 .command__copy[data-state="copied"] .copy-idle,
 .command__copy[data-state="failed"] .copy-idle {
   display: none;
 }
 
-.command__copy[data-state="loading"] .copy-loading,
 .command__copy[data-state="copied"] .copy-done,
 .command__copy[data-state="failed"] .copy-fail {
   display: inline;
@@ -301,19 +293,8 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-.try-done {
-  display: none;
-}
-
-.try__prompt[data-state="copied"] .try-idle,
-.try__prompt[data-state="failed"] .try-idle {
-  display: none;
-}
-
-.try__prompt[data-state="copied"] .try-done,
-.try__prompt[data-state="failed"] .try-done {
-  display: inline-flex;
-  align-items: center;
+.try__check {
+  flex: none;
 }
 
 /* Facts */
@@ -439,20 +420,6 @@ a:focus-visible {
 }
 
 @media (min-width: 64rem) {
-  html,
-  body {
-    height: 100%;
-    overflow-y: hidden;
-  }
-
-  .page {
-    height: 100svh;
-  }
-
-  .sheet {
-    min-height: 0;
-  }
-
   .composition {
     align-items: flex-start;
     gap: clamp(var(--space-xl), 7vw, var(--space-3xl));
@@ -465,7 +432,12 @@ a:focus-visible {
     padding-block: var(--space-lg);
   }
 
-  .tagline {
+  .tagline__icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.tagline {
     margin-top: var(--space-md);
   }
 
@@ -487,7 +459,8 @@ a:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .sheet[data-ready="true"] {
+  .sheet,
+  .wordmark__wave {
     animation: none;
   }
 

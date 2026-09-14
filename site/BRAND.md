@@ -8,16 +8,18 @@
 | Brødtekst | DM Sans |
 | Kode og etiketter | Geist Mono |
 
-Nettsiden laster skriftene lokalt fra `site/public/fonts`. SVG-filene bruker
+Nettsiden laster små WOFF2-utdrag av skriftene fra `site/public/fonts`. De
+fullstendige skriftene som genereringsskriptet bruker, ligger i
+`site/brand/fonts`. SVG-filene bruker
 bokstavkonturer fra Fraunces i ordmerket og DM Sans i bannerets
 undertittel. De trenger derfor ingen installerte skrifter. «Norsk grammatikk» bruker
-DM Sans Bold, og resten bruker DM Sans Regular. Robotikonet hentes fra den
-samme Phosphor-komponenten med vanlig strektykkelse som på nettsiden.
+DM Sans Bold, og resten bruker DM Sans Regular. Robotikonet er Phosphor-ikonet
+Robot med vanlig strektykkelse, den samme geometrien som på nettsiden.
 HarfBuzz sørger for at bokstavavstanden følger skriftenes OpenType-regler.
 
 ## Farger
 
-Nettsidens farger og typografi er definert i `site/public/tokens.css`.
+Nettsidens farger og typografi er definert i `site/src/tokens.css`.
 Nettsiden bruker kjølige gråtoner inspirert av stein og vann: bakgrunn
 (`#c6cdd1`), ark (`#e0e5e7`), kommandofelt (`#e9edef`) og mørk skiferfarget
 tekst og knapper (`#293740`). Bakgrunnen er ensfarget uten tekstur.
@@ -47,7 +49,7 @@ grunnlaget, men prosjektet er ikke utgitt av eller tilknyttet Språkrådet.
 ## Generering
 
 Kjør `python3 scripts/generate-brand.py` fra prosjektmappen for å lage SVG-filene
-med fontTools og HarfBuzz (`hb-shape`). Node-avhengighetene i `site` må være installert. Kjør deretter `node scripts/render-brand.cjs` med sharp tilgjengelig
+med fontTools og HarfBuzz (`hb-shape`). Kjør deretter `node scripts/render-brand.cjs` med sharp tilgjengelig
 for å lage PNG-filene. Begge skriptene skriver direkte til `site/public/assets`,
 som er den eneste kilden til merkefilene. README-en bruker de samme filene.
 Vite kopierer dem til `site/dist` under bygging. Byggemappen er generert og skal

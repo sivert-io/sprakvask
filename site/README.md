@@ -10,13 +10,15 @@ npm ci
 npm run dev
 ```
 
-`npm run build` sjekker TypeScript og bygger siden til `dist/`.
+`npm run build` sjekker TypeScript, bygger siden til `dist/` og forhåndsrendrer
+HTML-en (`scripts/prerender.mjs`), så teksten er med i første svar fra serveren.
 `npm run preview` viser det ferdige bygget lokalt.
 
 ## Filer
 
-- `src/`: React-komponenter, stilark og funksjonalitet.
-- `public/`: skrifter, merkefiler, designtokens, robots.txt og sitemap.xml.
+- `src/`: React-komponenter, designtokens, stilark og funksjonalitet.
+- `public/`: WOFF2-skrifter, merkefiler, robots.txt og sitemap.xml.
+- `brand/fonts/`: fullstendige skrifter til genereringsskriptet. Serveres ikke.
 - `BRAND.md`: skrifter, farger og generering av merkefilene.
 - `dist/`: generert ved bygging og ignorert av Git.
 
@@ -25,7 +27,7 @@ Behold `.env.example`, låsefilen og merkefilene i `public/assets/` i Git;
 merkefilene brukes direkte av README-en og produksjonsbygget.
 
 Nettsiden og README-en i prosjektroten bruker merkefilene i `public/assets/`.
-Skriftene ligger bare i `public/fonts/`. Docker bruker det ferdige Vite-bygget.
+Nettsiden bruker skriftene i `public/fonts/`. Docker bruker det ferdige Vite-bygget.
 
 ## Oppstart på VM
 
