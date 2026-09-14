@@ -1,6 +1,7 @@
 import { Hero } from './components/Hero';
 import { Playground } from './components/Playground';
 import { Footer } from './components/Footer';
+import { Examples } from './components/Examples';
 
 export function App() {
   return (
@@ -10,6 +11,7 @@ export function App() {
           <Hero />
           <Playground />
         </div>
+        <Examples />
         <Footer />
       </article>
     </main>

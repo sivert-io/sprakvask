@@ -65,6 +65,8 @@
   --color-error: oklch(48% 0.16 25);
   --color-success: oklch(43% 0.11 155);
   --color-transparent: transparent;
+  --color-before: #d3d9dc;
+  --color-backdrop: rgb(41 55 64 / 0.45);
 
   --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
   --font-body: "DM Sans", "Avenir Next", "Segoe UI", sans-serif;
@@ -94,6 +96,7 @@
   --ease-in-out: cubic-bezier(.65, 0, .35, 1);
   --dur-short: 140ms;
   --dur-arrive: 1000ms;
+  --dur-dialog: 220ms;
   --dur-water: 9s;
   --rule-thin: 1px;
   --radius-control: 0;
