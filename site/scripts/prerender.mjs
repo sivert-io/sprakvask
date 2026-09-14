@@ -30,9 +30,13 @@ async function versioned(url) {
   return `${url}?v=${createHash('sha256').update(bytes).digest('hex').slice(0, 8)}`;
 }
 const icon = '/assets/icon.svg';
+const banner = '/assets/banner.png';
+const bannerUrl = `https://sprakvask.no${banner}`;
 
 const output = html
   .replace(`href="${icon}"`, `href="${await versioned(icon)}"`)
+  // Link previews (Slack, LinkedIn, Facebook) cache the image by URL for a long time.
+  .replaceAll(bannerUrl, `https://sprakvask.no${await versioned(banner)}`)
   .replace(cssLink[0], () => `<style>${css}</style>`)
   .replace(marker, () => `<div id="root">${render()}</div>`);
 

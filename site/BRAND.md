@@ -25,8 +25,9 @@ Nettsiden bruker kjølige gråtoner inspirert av stein og vann: bakgrunn
 tekst og knapper (`#293740`). Bakgrunnen er ensfarget uten tekstur.
 Blåtonene i vannet er beholdt.
 
-Eksportene bruker lyst papir (`#fbfcfd`), blekk (`#1f1b24`) og tre blåtoner
-(`#597fb1`, `#6d8fb9` og `#aec7e2`). Bakgrunnen er lys lilla (`#e4e4f2`).
+Logoene og favikonet bruker lyst papir (`#fbfcfd`), blekk (`#1f1b24`) og tre
+blåtoner (`#597fb1`, `#6d8fb9` og `#aec7e2`). Banneret bruker nettsidens
+farger, så delingsbildet ser ut som siden.
 Vannet ligger inne i bokstavene. På nettsiden beveger det seg rolig;
 ved redusert bevegelse og i eksporterte bilder står det stille.
 
@@ -39,7 +40,7 @@ ved redusert bevegelse og i eksporterte bilder står det stille.
 | `icon.svg` | Favicon med en S og blått vann |
 | `banner.svg` | Banner på lys bakgrunn, 1280 × 640 |
 | `banner.png` | Rastereksport av banneret, brukt til sosial forhåndsvisning |
-| `og-image.png` | Delingsbilde, 1200 × 630; nettsidens metadata bruker banner.png |
+| `og-image.png` | Delingsbilde, 1200 × 630. Nettsidens metadata bruker `banner.png` |
 
 ## Navnet
 

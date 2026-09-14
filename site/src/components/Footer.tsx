@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="footer">
       <p>
-        En åpen norsk språkferdighet for kodeagenter. Støtter blant annet
+        Et åpent sett med norske språkregler for kodeagenter. Støtter blant annet
         Codex, Cursor, Claude Code og Copilot. Ikke utgitt av eller
         tilknyttet Språkrådet. MIT-lisens.
       </p>
