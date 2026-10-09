@@ -263,6 +263,117 @@ Typiske tekster fra kodeagenter, før og etter språkvask. Trykk for å se.
 
 </details>
 
+### Rett fra Google Translate
+
+Engelsk tekst oversatt til norsk i Google Translate 9. oktober 2026, uten
+endringer, og deretter vasket med skillen. Oversettelsen er grammatisk riktig,
+men ordvalget og rytmen er fortsatt engelsk.
+
+<details>
+<summary><strong>Feilmelding fra Google Translate</strong></summary>
+
+> Oops! Something went wrong. Please try again later. If the problem persists,
+> contact Customer Support.
+
+```diff
+- Oops! Noe gikk galt. Vennligst prøv igjen senere. Hvis problemet vedvarer, kontakt kundeservice.
++ Noe gikk galt. Prøv igjen om litt, og kontakt kundeservice hvis det fortsatt ikke virker.
+```
+
+- `Oops!` er engelsk og står urørt i oversettelsen.
+- `Vennligst` er `please` ord for ord.
+- `vedvarer` er stivt. `fortsatt ikke virker` sier det samme med vanlige ord.
+
+</details>
+
+<details>
+<summary><strong>Invitasjon fra Google Translate</strong></summary>
+
+> Hi Anna,
+> We're excited to invite you to our Annual Summer Party! The event will take
+> place on Friday, June 14th from 6:00-11:00 PM. Please RSVP by June 1st.
+> Best regards,
+> John Smith
+> Head of Marketing
+
+```diff
+- Hei Anna,
+- Vi har gleden av å invitere deg til vår årlige sommerfest!
+- Arrangementet finner sted fredag 14. juni kl. 18.00–23.00. Vennligst gi beskjed om du kommer innen 1. juni.
+- Med vennlig hilsen,
+- John Smith
+- Markedsdirektør
++ Hei, Anna
++ Vi inviterer deg til den årlige sommerfesten vår!
++ Vi ses fredag 14. juni kl. 18.00–23.00. Gi beskjed om du kommer, seinest 1. juni.
++ Vennlig hilsen
++ John Smith
++ markedsdirektør
+```
+
+- Hilsenen følger engelsk mønster: komma etter navnet og etter `Med vennlig hilsen`.
+- `vår årlige sommerfest` har eiendomsordet foran, som på engelsk.
+- `innen 1. juni` er tvetydig, og her kan det også leses som at du skal komme innen 1. juni.
+- Titler har liten forbokstav, også i signaturen.
+- Datoen og tidsrommet med tankestrek ble riktige.
+
+</details>
+
+<details>
+<summary><strong>Registrering fra Google Translate</strong></summary>
+
+> Create Your Account. Please enter your email address to get started. Your
+> password must be at least 8 characters long. By signing up, you agree to our
+> Terms of Service.
+
+```diff
+- Opprett konto. Oppgi e-postadressen din for å komme i gang. Passordet må være på minst 8 tegn. Ved å registrere deg godtar du våre vilkår for bruk.
++ Opprett konto
++ Skriv inn e-postadressen din for å komme i gang. Passordet må ha minst åtte tegn. Når du registrerer deg, godtar du brukervilkårene.
+```
+
+- `våre vilkår for bruk` er `our Terms of Service` ord for ord. På norsk heter det `brukervilkårene`.
+- Tall til og med tolv skrives med bokstaver i løpende tekst.
+- `Ved å registrere deg` blir lettere å lese som en leddsetning med `når`.
+
+</details>
+
+<details>
+<summary><strong>Versjonsmerknad fra Google Translate</strong></summary>
+
+> What's New: We've made some improvements to the Dashboard. You can now export
+> your data to CSV, and the app loads 50% faster. When it comes to performance,
+> this is a game-changer.
+
+```diff
+- Nyheter: Vi har gjort noen forbedringer av dashbordet. Du kan nå eksportere dataene dine til CSV, og appen laster 50 % raskere. Når det gjelder ytelse, er dette et stort gjennombrudd.
++ Nytt i dashbordet
++ Du kan nå eksportere dataene dine til CSV, og appen lastes inn 50 % raskere.
+```
+
+- `noen forbedringer` sier ingenting. Forbedringene står i neste setning.
+- `appen laster` er engelsk `the app loads`. På norsk er det appen som `lastes inn`.
+- Sluttsetningen er skryt uten innhold, på engelsk og på norsk.
+
+</details>
+
+<details>
+<summary><strong>Abonnement fra Google Translate</strong></summary>
+
+> Your subscription costs $1,299.99 per year — that's 15% off. Payment is due
+> within 14 days. Cancel anytime, no questions asked.
+
+```diff
+- Abonnementet ditt koster 1 299,99 dollar i året – det er 15 % rabatt. Betaling må skje innen 14 dager. Du kan si opp når som helst, uten spørsmål.
++ Abonnementet ditt koster 1 299,99 dollar i året – det er 15 % rabatt. Betal innen 14 dager. Du kan si opp når du vil, uten å oppgi grunn.
+```
+
+- Google Translate gjorde em-streken om til tankestrek og fikk tall og prosent riktig.
+- `uten spørsmål` er `no questions asked` ord for ord.
+- `Betaling må skje` er en omvei. Si hva leseren skal gjøre.
+
+</details>
+
 ## Kilder og forbehold
 
 Normene er hentet fra [Språkrådet](https://sprakradet.no) – veiledningssidene
