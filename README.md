@@ -114,23 +114,23 @@ ligger i `references/` og lastes bare ved tvil:
 
 ## De vanligste feilene
 
-|               | Feil                            | Riktig                       |
-| ------------- | ------------------------------- | ---------------------------- |
-| Em-strek      | `mat — drikke`                  | `mat – drikke`               |
-| Oxford-komma  | `mat, drikke, og premier`       | `mat, drikke og premier`     |
-| Særskriving   | `lørdags kvelden`               | `lørdagskvelden`             |
-| Anførselstegn | `"hei"`                         | `«hei»`                      |
-| Tusenskille   | `1,000`                         | `1 000`                      |
-| Overskrifter  | `Meld Deg På`                   | `Meld deg på`                |
-| Eiendomsform  | `Sivert's bil`                  | `Siverts bil`                |
-| Høflighet     | `Vennligst prøv igjen`          | `Prøv igjen`                 |
-| Eiendomsord   | `din konto`                     | `kontoen din`                |
-| Komma         | `For å melde deg på, må du …`   | `For å melde deg på må du …` |
-| E-post        | `Hei Anna,`                     | `Hei, Anna`                  |
-| Titler        | `Daglig Leder`                  | `daglig leder`               |
-| Forkortelser  | `evt.`, `ifht.`, `mnd.`         | `ev.`, `ift.`, `md.`         |
-| Anglisisme    | `når det kommer til`            | `når det gjelder`            |
-| KI-preg       | `Det er verdt å merke seg at …` | stryk, begynn med poenget    |
+|               | Feil                            | Riktig                            |
+| ------------- | ------------------------------- | --------------------------------- |
+| Em-strek      | mat — drikke (em-strek, U+2014) | mat – drikke (tankestrek, U+2013) |
+| Oxford-komma  | `mat, drikke, og premier`       | `mat, drikke og premier`          |
+| Særskriving   | `lørdags kvelden`               | `lørdagskvelden`                  |
+| Anførselstegn | `"hei"`                         | `«hei»`                           |
+| Tusenskille   | `1,000`                         | `1 000`                           |
+| Overskrifter  | `Meld Deg På`                   | `Meld deg på`                     |
+| Eiendomsform  | `Sivert's bil`                  | `Siverts bil`                     |
+| Høflighet     | `Vennligst prøv igjen`          | `Prøv igjen`                      |
+| Eiendomsord   | `din konto`                     | `kontoen din`                     |
+| Komma         | `For å melde deg på, må du …`   | `For å melde deg på må du …`      |
+| E-post        | `Hei Anna,`                     | `Hei, Anna`                       |
+| Titler        | `Daglig Leder`                  | `daglig leder`                    |
+| Forkortelser  | `evt.`, `ifht.`, `mnd.`         | `ev.`, `ift.`, `md.`              |
+| Anglisisme    | `når det kommer til`            | `når det gjelder`                 |
+| KI-preg       | `Det er verdt å merke seg at …` | stryk, begynn med poenget         |
 
 ## Eksempler
 
@@ -146,7 +146,7 @@ Typiske tekster fra kodeagenter, før og etter språkvask. Trykk for å se.
 
 - `Vennligst` er engelsk `please` og virker stivt. Høfligheten ligger i setningen.
 - `En feil oppstod` sier ikke hva som gikk galt eller hva leseren skal gjøre.
-- Em-streken (`—`) finnes ikke i norsk.
+- Em-streken (—, U+2014) finnes ikke i norsk. Norsk bruker tankestrek (–, U+2013).
 
 </details>
 
