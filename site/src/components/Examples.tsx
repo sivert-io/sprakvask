@@ -73,6 +73,56 @@ const EXAMPLES: Example[] = [
     after: 'Søknaden blir behandla i mai. Ta kontakt dersom det finst feil i opplysningane.',
     notes: ['Nynorsk har ikke s-passiv i presens.', '«Hvis» finnes ikke i nynorsk.'],
   },
+  // Google Translate output from 9 October 2026, copied unchanged.
+  {
+    title: 'Feilmelding fra Google Translate',
+    before: 'Oops! Noe gikk galt. Vennligst prøv igjen senere. Hvis problemet vedvarer, kontakt kundeservice.',
+    after: 'Noe gikk galt. Prøv igjen om litt, og kontakt kundeservice hvis det fortsatt ikke virker.',
+    notes: [
+      '«Oops!» er engelsk og står urørt i oversettelsen.',
+      '«Vennligst» er «please» ord for ord.',
+      '«Vedvarer» er stivt. «Fortsatt ikke virker» sier det samme med vanlige ord.',
+    ],
+  },
+  {
+    title: 'Invitasjon fra Google Translate',
+    before: 'Hei Anna,\nVi har gleden av å invitere deg til vår årlige sommerfest!\nArrangementet finner sted fredag 14. juni kl. 18.00–23.00. Vennligst gi beskjed om du kommer innen 1. juni.\nMed vennlig hilsen,\nJohn Smith\nMarkedsdirektør',
+    after: 'Hei, Anna\nVi inviterer deg til den årlige sommerfesten vår!\nVi ses fredag 14. juni kl. 18.00–23.00. Gi beskjed om du kommer, seinest 1. juni.\nVennlig hilsen\nJohn Smith\nmarkedsdirektør',
+    notes: [
+      'Hilsenen følger engelsk mønster med komma etter navnet og etter avslutningen.',
+      '«Vår årlige sommerfest» har eiendomsordet foran, som på engelsk.',
+      '«Innen 1. juni» er tvetydig.',
+      'Titler har liten forbokstav, også i signaturen.',
+    ],
+  },
+  {
+    title: 'Registrering fra Google Translate',
+    before: 'Opprett konto. Oppgi e-postadressen din for å komme i gang. Passordet må være på minst 8 tegn. Ved å registrere deg godtar du våre vilkår for bruk.',
+    after: 'Opprett konto\nSkriv inn e-postadressen din for å komme i gang. Passordet må ha minst åtte tegn. Når du registrerer deg, godtar du brukervilkårene.',
+    notes: [
+      '«Våre vilkår for bruk» er «our Terms of Service» ord for ord.',
+      'Tall til og med tolv skrives med bokstaver i løpende tekst.',
+    ],
+  },
+  {
+    title: 'Versjonsmerknad fra Google Translate',
+    before: 'Nyheter: Vi har gjort noen forbedringer av dashbordet. Du kan nå eksportere dataene dine til CSV, og appen laster 50 % raskere. Når det gjelder ytelse, er dette et stort gjennombrudd.',
+    after: 'Nytt i dashbordet\nDu kan nå eksportere dataene dine til CSV, og appen lastes inn 50 % raskere.',
+    notes: [
+      '«Noen forbedringer» sier ingenting.',
+      '«Appen laster» er engelsk «the app loads».',
+      'Sluttsetningen er skryt uten innhold.',
+    ],
+  },
+  {
+    title: 'Abonnement fra Google Translate',
+    before: 'Abonnementet ditt koster 1 299,99 dollar i året – det er 15 % rabatt. Betaling må skje innen 14 dager. Du kan si opp når som helst, uten spørsmål.',
+    after: 'Abonnementet ditt koster 1 299,99 dollar i året – det er 15 % rabatt. Betal innen 14 dager. Du kan si opp når du vil, uten å oppgi grunn.',
+    notes: [
+      'Google Translate fikk tankestrek, tall og prosent riktig.',
+      '«Uten spørsmål» er «no questions asked» ord for ord.',
+    ],
+  },
 ];
 
 export function Examples() {
