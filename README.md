@@ -81,6 +81,13 @@ Filene flere deler på – `AGENTS.md`, `copilot-instructions.md`, `.rules`,
 `CONVENTIONS.md` – tilhører deg. Der skrives det inn et avmerket avsnitt som
 kan oppdateres og fjernes igjen uten at noe annet i filen røres.
 
+Med [skills](https://github.com/vercel-labs/skills), som legger inn ferdigheten
+med referansefiler for alle agentene den støtter:
+
+```bash
+npx skills add sivert-io/sprakvask
+```
+
 Som plugin i Claude Code, hvis du heller vil ha den slik:
 
 ```

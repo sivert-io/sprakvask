@@ -1,7 +1,9 @@
 ---
 name: sprakvask
 description: "Norsk språkvask etter Språkrådets normer og klarspråksråd. Bruk når teksten som skrives eller rettes er på norsk – bokmål eller nynorsk – i grensesnitt, e-post, dokumentasjon, vilkår, commit-meldinger eller kommentarer i kode. Fanger særlig feilene som oppstår når norsk skrives av noen som tenker på engelsk."
-version: 1.3.1
+license: MIT
+metadata:
+  version: "1.3.1"
 ---
 
 # Språkvask
